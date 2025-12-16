@@ -1,0 +1,607 @@
+/* SECCIÓN 1 */
+:root {
+    --primary-bg-color: #ffffff; /* Fondo crema claro */
+    --header-bg-color:rgb(10 32 64); /* Fondo oscuro del banner superior */
+    --text-color: #000000; /* Texto oscuro */
+    --highlight-color: #ff8c00; /* Naranja para el borde del video y enlaces */
+    --video-border-color: #ff8c00; 
+}
+
+/* 1. Estilos del Cuerpo y Fondo General */
+body {
+    background-color: var(--primary-bg-color); /* Fondo del cuerpo */
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif; 
+}
+
+/* 2. Estilos del Banner Superior Oscuro */
+.confirmation-header {
+    background-color: var(--primary-bg-color);
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.top-banner {
+    background: var(--header-bg-color);
+    min-height: 120px; /* Altura del banner oscuro */
+    width: 100%;
+    position: relative; /* CRUCIAL: Necesario para centrar el logo con 'absolute' */
+    /* Para simular el patrón de hojas, puedes usar una imagen de fondo */
+    background-image: url('assets/img/dark-leaf-pattern.png'); 
+    background-repeat: repeat-x;
+    background-position: left top;
+    z-index: 1;
+}
+
+/* 3. Estilos del Logo (Árbol) - AHORA CENTRADO EN EL BANNER */
+.logo-confirmation {
+    width: 85px; 
+    height: 85px;
+    z-index: 2; 
+    /* Propiedades para centrado absoluto dentro de .top-banner */
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); /* Ajuste de centrado exacto */
+ 
+    /* El margen no es necesario si usamos centrado absoluto */
+    /* margin-top: 4px; */ 
+    /* margin-left: 4px; */
+}
+
+/* 4. Títulos y Textos */
+.main-title-confirmation {
+    font-size: 3rem; 
+    font-weight: 700; 
+    line-height: 1;
+    color: var(--text-color);
+    /* Ajuste para mover el título hacia abajo, dejando espacio al logo */
+    margin-top: 5rem !important; 
+}
+
+.video-invitation-text {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.watch-video-link {
+    color: var(--highlight-color);
+    font-weight: 700;
+    text-decoration: none; 
+    transition: color 0.3s;
+}
+.watch-video-link:hover {
+    color:  #ff8c00; 
+}
+
+.confirmation-message {
+    font-size: 1.25rem;
+    max-width: 800px; 
+    line-height: 1.75;
+}
+
+/* 5. Estilo del Contenedor Principal - AÑADIENDO MÁS PADDING INFERIOR */
+.content-area {
+    /* Añadimos padding inferior (por ejemplo, 100px) para separar el texto del borde */
+    padding-bottom: 0px !important; 
+    padding-top: 0 !important; /* Mantenemos el contenido sin padding superior extra */
+}
+
+
+/* 6. Estilo del Contenedor del Video (El cuadro naranja) */
+.video-mockup-container {
+    max-width: 700px; 
+    width: 90%;
+    border: 4px solid var(--video-border-color); 
+    border-radius: 15px;
+    padding: 10px; 
+    background-color: transparent;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 7. Estilos del Video Responsivo */
+.video-responsive-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+}
+
+.video-responsive-styled {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0; 
+}
+
+/* ===== NUEVO: Video Mockup - Parece reproducible pero no funciona ===== */
+.video-mockup-display {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.video-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s;
+}
+
+.video-play-button {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 140, 0, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    transition: all 0.3s;
+    box-shadow: 0 4px 20px rgba(255, 140, 0, 0.4);
+}
+
+.video-mockup-display:hover .video-play-button {
+    transform: scale(1.1);
+    background: rgba(255, 140, 0, 1);
+}
+
+/* Controles falsos del video */
+.video-controls-mockup {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    padding: 20px 15px 15px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.video-mockup-display:hover .video-controls-mockup {
+    opacity: 1;
+}
+
+.video-progress-bar {
+    width: 100%;
+    height: 5px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 3px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.video-progress-filled {
+    width: 0%;
+    height: 100%;
+    background: #FF8C00;
+    border-radius: 3px;
+}
+
+.video-control-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.video-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.2s;
+}
+
+.video-btn:hover {
+    color: #FF8C00;
+}
+
+.video-time {
+    color: white;
+    font-size: 0.9rem;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+/* Cuando se "reproduce" (click) - oculta el botón de play */
+.video-mockup-display.playing .video-play-button {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* En mobile - ajuste del botón de play */
+@media (max-width: 768px) {
+    .video-play-button {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+}
+/* ===== FIN Video Mockup ===== */
+
+
+
+
+/* SECCIÓN 2: */
+.features-section-alt {
+    background-color: var(--bg-section-alt); /* Fondo blanco limpio */
+    color: var(--text-color);
+    padding: 80px 20px;
+    position: relative;
+    overflow: hidden; /* Para contener las hojas */
+}
+
+/* Título superior pequeño (Small Title) */
+.small-sun-title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--icon-color);
+}
+.small-sun-title .fa-sun {
+    color: var(--highlight-color); /* Usamos el naranja de la cabecera */
+}
+
+/* Título principal de la sección */
+.main-feature-title {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--text-color); 
+}
+@media (max-width: 768px) {
+    .main-feature-title {
+        font-size: 2.2rem;
+    }
+}
+
+/* Resaltados de color en el título */
+.text-highlight-green {
+    color: #2d9b49;
+}
+.text-highlight-red {
+    color:  #ff8c00;
+}
+
+/* Subtítulo debajo del título principal */
+.feature-subtitle {
+    font-size: 1.25rem;
+    max-width: 800px;
+    line-height: 1.75;
+    margin-top: 20px;
+    color: #000;
+}
+
+/* Iconos y Tarjetas de Característica */
+.feature-item {
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+.feature-item:hover {
+    transform: translateY(-5px); /* Pequeño efecto al pasar el ratón */
+}
+
+/* Estilo de los Iconos (grandes y oscuros) */
+.feature-icon-alt {
+    font-size: 5rem; 
+    color: #ff8c00;
+    margin-bottom: 20px;
+}
+
+/* Texto dentro de los items */
+.feature-item h5 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+/* Estilos de Patrones de Hojas (simulación de la imagen) */
+.leaf-pattern-left, .leaf-pattern-right {
+    position: absolute;
+    width: 100px; 
+    height: 100%;
+    pointer-events: none;
+    background-image: url('assets/img/light-leaf-pattern.png'); /* Asegúrate de tener esta imagen */
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+    z-index: 0;
+    display: none; /* Ocultar por defecto en móvil */
+}
+
+@media (min-width: 992px) {
+    /* Mostrar hojas en escritorio */
+    .leaf-pattern-left, .leaf-pattern-right {
+        display: block;
+    }
+    .leaf-pattern-left {
+        left: 20px;
+        top: 20%;
+        width: 150px;
+        height: 150px;
+        transform: translateY(-50%);
+    }
+    .leaf-pattern-right {
+        right: 20px;
+        top: 40%;
+        width: 150px;
+        height: 150px;
+        transform: translateY(-50%) scaleX(-1); /* Reflejar la imagen */
+    }
+}
+
+
+
+/* SECCIÓN 3 */
+.testimonial-section {
+    background-color: var(--bg-testimonial); /* Fondo beige claro */
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-section .section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+/* CAMBIO 1: Estilo para colorear solo el ícono del megáfono a naranja */
+.section-title .icon-megaphone {
+    color: #ff8c00; /* Naranja fuerte */
+}
+
+/* Contenedor Grid para posicionar las imágenes (alineado uniformemente) */
+.testimonial-grid-images {
+    display: grid;
+    gap: 30px; /* Separación entre las imágenes */
+    width: 95%;
+    max-width: 1300px;
+    padding: 30px 0;
+}
+
+/* Contenedor individual de la imagen con Marco Naranja */
+.testimonial-image-container {
+    padding: 10px; 
+    border-radius: 15px;
+    background-color: #fff; /* Fondo blanco */
+    /* Borde naranja de 4px */
+    border: 4px solid #ff8c00; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Sombra */
+    transition: transform 0.3s ease;
+    overflow: hidden; 
+}
+.testimonial-image-container:hover {
+    transform: translateY(-5px) scale(1.02); /* Efecto sutil al pasar el ratón */
+}
+
+/* Estilo de la imagen de testimonio */
+.testimonial-screenshot {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px; 
+    object-fit: cover;
+}
+
+/* CAMBIO 2: Posicionamiento uniforme con CSS Grid para Desktop */
+@media (min-width: 1024px) {
+    .testimonial-grid-images {
+        /* Se define una cuadrícula uniforme de 4 columnas */
+        grid-template-columns: repeat(4, 1fr); 
+        /* Se eliminan las definiciones de grid-area para forzar la alineación y el orden natural (1, 2, 3, 4, 5, 6, 7, 8) */
+        grid-auto-rows: auto; /* Altura automática */
+        gap: 30px; /* Asegura el espaciado correcto */
+    }
+    
+    /* Nota: Se han eliminado las reglas específicas de grid-area 
+       (e.g., .img-daniel { grid-area: 1 / 1 / span 2 / span 1; })
+       para evitar la desalineación vertical y asegurar una cuadrícula uniforme 4x2. */
+}
+
+/* Estilos de Patrones de Hojas FLOTANTES (se mantienen) */
+.leaf-pattern-float {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    pointer-events: none;
+    background-color: transparent; 
+    /* Usando un SVG genérico para simular el patrón */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%238BC34A' d='M200.7 6.2c-15.2 2.3-26.6 15.6-28.9 30.8C162.7 103 162.7 186.8 162.7 270.9c0 10.7-1.1 21.4-3.3 32c-2.3 10.7-8.3 20.3-17.1 27.8c-10.7 9.5-24.8 15.6-39.7 16.9c-2.3 .3-4.6 .4-6.9 .4c-12.8 0-24.6-5.8-32.3-15.6c-13.9-17.7-10.4-43.2 8.3-57.1c38.7-30.7 77.4-61.4 116.1-92.1c11.9-9.5 19.3-23.3 20.7-38.3c.7-7.6 .4-15.2-.8-22.8c-1.3-8.8-5.3-17-11.5-23.7c-17.7-18-44.1-21-65.7-9.5c-43.8 23.3-87.6 46.7-131.4 70c-14.8 7.8-24.3 22.3-26.6 38.6c-2.3 16.2 3.8 32.3 16.7 43.8c12.1 10.7 28.1 16.9 44.4 16.9c13.7 0 26.6-4.6 37.7-12.8c10.4-8.8 16.7-20.7 18.2-33.8c1.3-9.5 .4-19.3-2.6-28.9c-14.8-46.7-14.8-93.5 0-140.2c2.8-9.8 6.4-18.7 10.7-26.9c12.6-24.6 31.8-44.4 55.4-58.8c24.6-15.2 52.8-21.6 81.3-19.8c15.2 .9 29.8 5.6 43.2 14.6c23 15.2 41.6 36.6 55.4 61.9c14.6 25.4 23.5 53.6 26.9 82.8c.8 7.8 1.1 15.6 1.1 23.5c0 84.1 0 168.2 0 252.3c0 10.9 .8 21.8 2.6 32.6c3.1 16.9 11.5 32.3 24.3 43.5c12.6 11.3 28.6 17.7 45.4 18.2c1.8 0 3.6 .1 5.4 .1c13.1 0 25.1-6 32.8-15.9c13.9-17.7 10.4-43.2-8.3-57.1c-38.7-30.7-77.4-61.4-116.1-92.1c-11.9-9.5-19.3-23.3-20.7-38.3c-.7-7.6-.4-15.2 .8-22.8c1.3-8.8 5.3-17 11.5-23.7c17.7-18 44.1-21 65.7-9.5c43.8 23.3 87.6 46.7 131.4 70c14.8 7.8 24.3 22.3 26.6 38.6c2.3 16.2-3.8 32.3-16.7 43.8c-12.1 10.7-28.1 16.9-44.4 16.9c-13.7 0-26.6-4.6-37.7-12.8c-10.4-8.8-16.7-20.7-18.2-33.8c-1.3-9.5-.4-19.3 2.6-28.9c14.8-46.7 14.8-93.5 0-140.2c-2.8-9.8-6.4-18.7-10.7-26.9c-12.6-24.6-31.8-44.4-55.4-58.8c-24.6-15.2-52.8-21.6-81.3-19.8c-15.2 .9-29.8 5.6-43.2 14.6c-23 15.2-41.6 36.6-55.4 61.9c-14.6 25.4-23.5 53.6-26.9 82.8c-.8 7.8-1.1 15.6-1.1 23.5c0 84.1 0 168.2 0 252.3c0 10.9-.8 21.8-2.6 32.6c-3.1 16.9-11.5 32.3-24.3 43.5c-12.6 11.3-28.6 17.7-45.4 18.2c-1.8 0-3.6 .1-5.4 .1z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.2; 
+}
+
+@media (min-width: 768px) {
+    .leaf-top-left {
+        top: 0;
+        left: -20px;
+        width: 150px;
+        height: 150px;
+    }
+    .leaf-bottom-left {
+        bottom: 0;
+        left: -50px;
+        width: 150px;
+        height: 150px;
+        transform: rotate(180deg);
+    }
+    .leaf-top-right {
+        top: 0;
+        right: -20px;
+        width: 150px;
+        height: 150px;
+        transform: scaleX(-1);
+    }
+    .leaf-bottom-right {
+        bottom: 0;
+        right: -50px;
+        width: 150px;
+        height: 150px;
+        transform: rotate(180deg) scaleX(-1);
+    }
+}
+
+/* Sección 4*/
+:root {
+    --color-primary-dark: #000; /* Usando un gris oscuro para mayor contraste */
+    --bg-appointment: #fff; /* Color beige claro del fondo de la página */
+    --color-accent: #2c974b; 
+    --color-text-email: #205295; 
+    --color-orange-border: #ff8c00; /* Naranja fuerte para bordes */
+}
+
+/* --- SECCIÓN 4: DETALLE DE LA CITA/AUDITORÍA (Ajustes de espacio) --- */
+
+.appointment-section {
+    background-color: var(--bg-appointment);
+    color: var(--color-primary-dark);
+    min-height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0; /* Aumentamos el padding vertical */
+    font-family: 'Poppins', sans-serif !important; 
+    position: relative; 
+}
+
+/* Contenedor principal - AUMENTADO AÚN MÁS el tamaño */
+.appointment-section .container {
+    max-width: 1300px; /* De 1000px a 1200px para más espacio */
+    width: 100%;
+    background-color: transparent; 
+    padding: 0; 
+    box-shadow: none;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Logo Flotante en la esquina superior derecha (Ajustado para el nuevo contenedor) */
+.appointment-logo {
+    position: absolute;
+    /* Ajustamos top y right para que no se corte y quede más centrado en el borde del contenedor */
+    top: -10px; 
+    right: 15px; 
+    width: 100px; /* Tamaño del logo ajustado */
+    height: 100px;
+}
+.appointment-logo img {
+    width: 100%;
+    height: 100%;
+    /* Corrección: Usamos 'contain' para asegurar que el logo completo se muestre */
+    object-fit: contain;
+}
+
+
+/* Título Principal - Aumentado */
+.appointment-title {
+    font-size: 3rem; /* De 3rem a 3.5rem */
+    font-weight: 700; 
+    color: var(--color-primary-dark);
+}
+
+/* Wrapper de Imagen con borde naranja */
+.appointment-image-wrapper {
+    border: 7px solid var(--color-orange-border); /* Borde más grueso */
+    border-radius: 50%;
+    padding: 7px; /* Padding interno aumentado */
+    /* Corrección: ELIMINAMOS la sombra de la imagen */
+    box-shadow: none; 
+    display: inline-block;
+}
+
+/* Imagen Circular (Andrew Pernia) - AUMENTADA */
+.appointment-img {
+    width: 400px; 
+    height: 400px;
+    object-fit: cover; 
+    border-radius: 50%; 
+    border: none; 
+}
+
+/* Estilo del Bloque de Texto (Columna Derecha) */
+.appointment-text-block {
+    padding-left: 50px; /* Mayor espaciado entre imagen y texto */
+}
+.appointment-text-block p {
+    line-height: 1.75; 
+    margin-bottom: 1.8rem; 
+    /* Corrección: Unificamos el tamaño base de letra para todos los párrafos */
+    font-size: 1.25rem; 
+    color: #000;
+}
+/* Texto Principal - Aseguramos la uniformidad y aumentamos su tamaño */
+.appointment-text-main {
+    font-size: 1.25rem !important; /* Mantenemos el tamaño uniforme */
+    color: var(--color-primary-dark) !important;
+}
+
+/* Firma y Contacto */
+.appointment-signature {
+    font-size: 1.25rem; 
+    color: var(--color-primary-dark);
+    margin-top: 2.5rem !important; 
+}
+
+/* Ajustes responsivos para móvil */
+@media (max-width: 991px) { /* Usamos breakpoint MD para ajustes */
+    .appointment-section {
+        padding: 40px 0;
+    }
+    .appointment-section .container {
+        padding: 0 20px; /* Padding lateral para móviles */
+    }
+    .appointment-logo {
+        position: relative;
+        margin-bottom: 1rem;
+        width: 60px;
+        height: 60px;
+        margin-left: auto;
+        margin-right: auto;
+        top: auto;
+        right: auto;
+    }
+    .appointment-title {
+        margin-bottom: 1.5rem;
+    }
+    .appointment-image-wrapper {
+        padding: 5px; 
+    }
+    .appointment-img {
+        width: 280px; /* Reducimos la imagen en móvil/tablet */
+        height: 280px;
+    }
+    .appointment-text-block {
+        padding-left: 0;
+        text-align: center;
+        margin-top: 2rem;
+    }
+    .appointment-text-block p {
+        /* Ajuste de fuente responsivo */
+        font-size: var(--font-size-body-sm);
+        text-align: left;
+    }
+    .appointment-text-main {
+        font-size: 1rem !important;
+    }
+
+}
+@media (max-width: 576px) {
+    .appointment-img {
+        width: 250px;
+        height: 250px;
+    }
+}

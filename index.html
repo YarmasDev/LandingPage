@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JungleClick - Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f0;
+            color: #333;
+        }
+
+        /* Navigation Panel */
+        .nav-panel {
+            background-color: #f5f5f0;
+            padding: 2px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .nav-tabs-custom {
+            border: none;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-tab-item {
+            background: none;
+            border: none;
+            padding: 10px 25px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 0;
+            position: relative;
+        }
+
+        .nav-tab-item:hover {
+            color: #333;
+        }
+
+        .nav-tab-item.active {
+            color: #333;
+            font-weight: 700;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(90deg, #1a2a3a 0%, #2d4a5e 50%, #3d5a6e 100%);
+            padding: 58px 40px 100px 40px;
+            position: relative;
+        }
+
+        .hero-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .logo-container {
+            margin-bottom: 20px;
+        }
+
+        .logo-container img {
+            height: 60px;
+            width: auto;
+        }
+
+        .hero-tagline {
+            font-size: 20px;
+            font-weight: 650;
+            color: white;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .hero-title {
+            font-size: 37px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .hero-title .highlight {
+            color: #ff8c42;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: white;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            max-width: 900px;
+        }
+
+        .cta-button {
+            background: #f17324;
+            color: white;
+            border: none;
+            padding: 20px 50px;
+            font-size: 24px;
+            font-weight: 700;
+            border-radius: 60px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 140, 66, 0.4);
+        }
+
+        .cta-button:hover {
+            background: #ff7a2e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 140, 66, 0.5);
+        }
+
+        .cta-icon {
+            width: 32px;
+            height: 32px;
+            background: white;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cta-icon::before {
+            content: '';
+            display: block;
+            width: 128px;
+            height: 128px;
+            background: url('assets/img/google_meet.png') center/contain no-repeat;
+            position: absolute;
+        }
+
+        .brands-trust-section {
+            margin-top: 40px;
+        }
+
+        .brands-trust-title {
+            font-size: 20px;
+            font-weight: 750;
+            color: white;
+            letter-spacing: 1px;
+            margin-left: 0;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .brands-carousel-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .carousel-arrow {
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 48px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 0;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-arrow:hover {
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .brands-container {
+            background: white;
+            border-radius: 40px;
+            padding: 50px 80px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 60px;
+            flex: 1;
+        }
+
+        .brand-logo-1, .brand-logo-2, .brand-logo-3, .brand-logo-4 {
+            width: 200px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .brand-logo-1 img {
+            max-width: 200%;
+            max-height: 200%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .brand-logo-2 img {
+            max-width: 125%;
+            max-height: 125%;
+            object-fit: contain;
+            display: block;
+            margin-right: 30px;
+        }
+
+        .brand-logo-3 img {
+            max-width: 120%;
+            max-height: 120%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .brand-logo-4 img {
+            max-width: 125%;
+            max-height: 125%;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* Certifications Section */
+        .certifications-section {
+            background: linear-gradient(90deg, #1a2a3a 0%, #2d4a5e 50%, #3d5a6e 100%);
+            padding: 30px 40px 80px 40px;
+            text-align: center;
+            color: white;
+        }
+
+        .certifications-section h2 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 60px;
+        }
+
+        .certifications-section h2 .highlight {
+            color: #ff8c42;
+        }
+
+        .cert-badges {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-bottom: 35px;
+            flex-wrap: wrap;
+        }
+
+        .cert-badge {
+            background: white;
+            padding: 15px 10px;
+            border-radius: 16px;
+            width: 220px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .cert-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+        .cert-icon.blue {
+            background: #5a9fd4;
+            color: white;
+        }
+
+        .cert-icon.orange {
+            background: #ff8c42;
+            color: white;
+        }
+
+        .cert-icon.purple {
+            background: #a78ac9;
+            color: white;
+        }
+
+        .cert-badge h4 {
+            color: #333;
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .cert-disclaimer {
+            font-size: 22px;
+            margin-bottom: 25px;
+            opacity: 0.95;
+        }
+
+        .results-metrics-title {
+            font-size: 52px;
+            font-weight: 700;
+            margin-bottom: 70px;
+        }
+
+        .metrics-display {
+            display: flex;
+            justify-content: center;
+            gap: 100px;
+            flex-wrap: wrap;
+        }
+
+        .metric-display-item {
+            text-align: center;
+        }
+
+        .metric-circle {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: #ff8c42;
+            border: 7px solid #e67835;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 52px;
+            font-weight: 900;
+            color: white;
+        }
+
+        .metric-display-label {
+            font-size: 19px;
+            font-weight: 600;
+            max-width: 260px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        /* Content Container */
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .tab-content-panel {
+            display: none;
+        }
+
+        .tab-content-panel.active {
+            display: block;
+        }
+
+        /* Success Stories Section */
+        .success-stories-section {
+            margin-top: 10px;
+            background-color: #f5f5f0;
+        }
+
+        .success-stories-section h2 {
+            font-size: 38px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .success-stories-section .subtitle {
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .success-stories-section .subtitle strong {
+            font-weight: 700;
+        }
+
+        .story-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 1020px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .story-card {
+            border: 3px solid #333;
+            border-radius: 60px;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .story-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+
+        .story-card-image {
+            width: 120px;
+            height: 120px;
+            flex-shrink: 0;
+            background: none;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .story-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .story-card-text {
+            flex: 1;
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1.4;
+            color: black;
+        }
+
+        /* Detailed Page Styles */
+        .large-headline {
+            font-size: 48px;
+            font-weight: 700;
+            text-align: center;
+            margin: 100px 0 80px 0;
+            line-height: 1.3;
+        }
+
+        .two-column-section {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 60px;
+            margin: 80px 0;
+            align-items: start;
+        }
+
+        .section-label {
+            font-size: 42px;
+            font-weight: 300;
+            color: #999;
+            position: sticky;
+            top: 120px;
+        }
+
+        .section-content {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .section-content p {
+            margin-bottom: 25px;
+        }
+
+        .section-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .section-content ul li {
+            margin-bottom: 20px;
+            padding-left: 0;
+        }
+
+        .section-content ul li strong {
+            font-weight: 700;
+        }
+
+        .chart {
+            width: 100%;
+            height: 300px;
+            background: none;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .chart img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* HOME PAGE STYLES */
+        .header.confirmation-header {
+            background-color: #f5f5f0;
+        }
+
+        .top-banner {
+            background-color: #f5f5f0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .logo-confirmation {
+            height: 50px;
+            width: auto;
+        }
+
+        .main-title-confirmation {
+            font-size: 42px;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.3;
+        }
+
+        .video-invitation-text {
+            font-size: 18px;
+            color: #666;
+        }
+
+        .watch-video-link {
+            color: #ff8c42;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .watch-video-link:hover {
+            text-decoration: underline;
+        }
+
+        .video-mockup-container {
+            max-width: 800px;
+            margin: 40px auto;
+        }
+
+        .video-responsive-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 16px;
+        }
+
+        /* ESTILOS DEL VIDEO REAL */
+        .video-real {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            background: black;
+        }
+
+        .video-real video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .confirmation-message {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+            max-width: 700px;
+        }
+
+        .features-section-alt {
+            background-color: #f5f5f0;
+            padding: 60px 20px;
+        }
+
+        .small-sun-title {
+            font-size: 16px;
+            color: #ff8c42;
+            font-weight: 600;
+        }
+
+        .main-feature-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.3;
+        }
+
+        .text-highlight-green {
+            color: #4caf50;
+            font-weight: 700;
+        }
+
+        .text-highlight-red {
+            color: #ff6b6b;
+            font-weight: 700;
+        }
+
+        .feature-subtitle {
+            font-size: 18px;
+            color: #666;
+            max-width: 800px;
+        }
+
+        .feature-item {
+            padding: 30px 20px;
+            background: white;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon-alt {
+            font-size: 48px;
+            color: #ff8c42;
+        }
+
+        .feature-item h5 {
+            font-size: 16px;
+            color: #1a1a1a;
+            line-height: 1.4;
+        }
+
+        .testimonial-section {
+            background-color: #f5f5f0;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .icon-megaphone {
+            font-size: 42px;
+            color: #ff8c42;
+        }
+
+        .testimonial-grid-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-image-container {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-image-container:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .testimonial-screenshot {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        .appointment-section {
+            background-color: #f5f5f0;
+            padding: 60px 20px;
+        }
+
+        .appointment-card-content {
+            background: white;
+            border-radius: 16px;
+            padding: 60px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .appointment-logo {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+        }
+
+        .appointment-logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .appointment-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .appointment-image-wrapper {
+            border: 4px solid #ff8c42;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .appointment-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .appointment-text-block {
+            color: #333;
+        }
+
+        .appointment-text-main {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+
+        .appointment-text-sub {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .appointment-signature {
+            font-size: 16px;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        .appointment-email {
+            color: #ff8c42;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .appointment-email:hover {
+            text-decoration: underline;
+        }
+
+        .appointment-dot {
+            font-size: 8px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 38px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .cta-button {
+                font-size: 20px;
+                padding: 18px 40px;
+            }
+
+            .brands-container {
+                flex-wrap: wrap;
+                gap: 30px;
+            }
+
+            .two-column-section {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .section-label {
+                position: static;
+                font-size: 32px;
+            }
+
+            .cert-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .metrics-display {
+                flex-direction: column;
+                align-items: center;
+                gap: 50px;
+            }
+
+            .story-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px;
+            }
+
+            .story-card-text {
+                font-size: 18px;
+            }
+
+            .main-title-confirmation {
+                font-size: 32px;
+            }
+
+            .appointment-card-content {
+                padding: 40px 20px;
+            }
+
+            .appointment-logo {
+                position: static;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav-panel">
+        <div class="nav-tabs-custom">
+            <button class="nav-tab-item active" onclick="switchTab('home')">Home</button>
+            <button class="nav-tab-item" onclick="switchTab('results')">Results</button>
+            <button class="nav-tab-item" onclick="switchTab('lgm-soil')">LGM Soil</button>
+            <button class="nav-tab-item" onclick="switchTab('quick-clean')">Quick and Clean</button>
+            <button class="nav-tab-item" onclick="switchTab('bifenthrin')">Bifenthrin</button>
+        </div>
+    </div>
+
+    <!-- HOME PAGE -->
+    <div id="home" class="tab-content-panel active">
+        <!-- Sección 1: Confirmación del Audit -->
+        <header class="header confirmation-header">
+            <div class="top-banner">
+                <img src="assets/img/logojungle.png" class="logo-confirmation" alt="Logo JungleClick">
+            </div>
+            
+            <div class="container text-center my-5 content-area">
+                <h1 class="main-title-confirmation mt-5 mb-3">
+                    Tu Amazon PPC Audit is Scheduled<br>
+                    Please Confirm Your Spot!
+                </h1>
+
+                <p class="video-invitation-text lead mb-4">
+                    Want to get the most out out of your audit? <a href="#video-section" class="watch-video-link">Watch the video 👇</a>
+                </p>
+
+                <!-- Contenedor del Video REAL -->
+                <div id="video-section" class="video-mockup-container mx-auto">
+                    <div class="video-responsive-wrapper">
+                        <div class="video-real">
+                            <video controls playsinline>
+                                <source src="assets/video/VIDEO_EXPLICATIVO.mp4" type="video/mp4">
+                                Tu navegador no soporta el elemento de video.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mensaje de confirmación inferior -->
+                <p class="confirmation-message mt-5 mb-5 mx-auto">
+                    We've sent you the confirmation details by email! Make sure to add it to your calendar right now
+                    so you don't miss your free 30-minute Amazon PPC Audit.
+                </p>
+            </div>
+        </header>
+
+        <!-- Sección 2: Features -->
+        <section class="features-section-alt py-5">
+            <div class="container mt-5">
+                <p class="small-sun-title text-center mb-4">
+                    <i class="fa-solid fa-sun me-2"></i> Why JungleClick?
+                </p>
+
+                <h2 class="main-feature-title mb-3 text-center">
+                    Give Us <span class="text-highlight-green">180 Days</span>,<br>
+                    If We Don't Deliver <span class="text-highlight-red">We Pay You</span>
+                </h2>
+                
+                <p class="feature-subtitle text-center mx-auto mb-5">
+                    Over the next 180 days you'll see at least a 10% - 30% improvement on your Return on Ad Spend 
+                </p>
+
+                <div class="row d-flex justify-content-center text-center g-5">
+                    <div class="col-12 col-sm-6 col-lg-3 feature-item">
+                        <i class="fa-solid fa-chess-knight feature-icon-alt mb-3"></i> 
+                        <h5 class="fw-bold">Data-driven strategies tailored to your brand</h5>
+                    </div>
+                    
+                    <div class="col-12 col-sm-6 col-lg-3 feature-item">
+                        <i class="fa-solid fa-calendar-check feature-icon-alt mb-3"></i>
+                        <h5 class="fw-bold">100% Amazon PPC specialization</h5>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3 feature-item">
+                        <i class="fa-solid fa-handshake feature-icon-alt mb-3"></i>
+                        <h5 class="fw-bold">Performance-based pricing, no long-term contracts</h5>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3 feature-item">
+                        <i class="fa-solid fa-clipboard-list feature-icon-alt mb-3"></i>
+                        <h5 class="fw-bold">Free personalized PPC audit – no strings attached</h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 3: Testimonios -->
+        <section class="testimonial-section py-5">
+            <div class="container-fluid">
+                <h2 class="section-title text-center mb-5">
+                    <span class="icon-megaphone"><i class="fa-solid fa-bullhorn me-2"></i></span> Listen to what other Amazon Sellers are saying
+                </h2>
+
+                <div class="testimonial-grid-images mx-auto">
+                    <div class="testimonial-image-container img-daniel">
+                        <img src="assets/img/testimonio.png" alt="Testimonio de cliente 1" class="testimonial-screenshot">
+                    </div>
+
+                    <div class="testimonial-image-container img-sarah">
+                        <img src="assets/img/testimonio2.png" alt="Testimonio de cliente 2" class="testimonial-screenshot">
+                    </div>
+
+                    <div class="testimonial-image-container img-patrick">
+                        <img src="assets/img/testimonio3.png" alt="Testimonio de cliente 3" class="testimonial-screenshot">
+                    </div>
+
+                    <div class="testimonial-image-container img-jennifer">
+                        <img src="assets/img/testimonio4.png" alt="Testimonio de cliente 4" class="testimonial-screenshot">
+                    </div>
+
+                    <div class="testimonial-image-container img-robert">
+                        <img src="assets/img/testimonio5.png" alt="Testimonio de cliente 5" class="testimonial-screenshot">
+                    </div>
+                    
+                    <div class="testimonial-image-container img-michael">
+                        <img src="assets/img/testimonio6.png" alt="Testimonio de cliente 6" class="testimonial-screenshot">
+                    </div>
+
+                    <div class="testimonial-image-container img-emily">
+                        <img src="assets/img/testimonio7.png" alt="Testimonio de cliente 7" class="testimonial-screenshot">
+                    </div>
+
+                    <div class="testimonial-image-container img-new">
+                        <img src="assets/img/testimonio.png" alt="Testimonio de cliente 8" class="testimonial-screenshot">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 4: Detalles de la Cita -->
+        <section class="appointment-section py-5">
+            <div class="container my-5 appointment-card-content"> 
+                <div class="appointment-logo">
+                    <img src="assets/img/logojungle.png" alt="Logo de la Empresa">
+                </div>
+
+                <div class="row mb-5">
+                    <div class="col-12 text-center">
+                        <h1 class="appointment-title mb-0">Appointment Details</h1>
+                    </div>
+                </div>
+
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-4 d-flex justify-content-center mb-4 mb-md-0">
+                        <div class="appointment-image-wrapper">
+                            <img src="assets/img/empresario.png" class="img-fluid appointment-img" alt="Andrew Pernia, CEO and Founder">
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-8 appointment-text-block">
+                        <p class="appointment-text-main">
+                            Thank you for scheduling your Amazon PPC Audit. We help amazon sellers optimize ad spend, cut wasted budget, and scale profitably on Amazon. And we stand by it with our 180-day guarantee: if we don't improve your Return on Ad Spend by at least 10%, we pay you back.
+                        </p>
+
+                        <p class="appointment-text-sub">
+                            This program isn't designed for launch-phase brands, unproven products, or anyone looking for quick fixes. 
+                        </p>
+
+                        <p class="appointment-text-sub">
+                            Please join from a quiet room so we can focus entirely on your campaigns.
+                        </p>
+
+                        <p class="appointment-text-sub">
+                            I'm excited to review your account, uncover hidden opportunities, and share proven PPC strategies to boost your sales and profitability.
+                        </p>
+
+                        <p class="appointment-signature mt-4">
+                            Andrew Pernia | CEO and Founder
+                            <br>
+                            <i class="fa-solid fa-circle text-primary me-2 appointment-dot"></i> <a href="mailto:start@jungleclickppc.com" class="appointment-email">start@jungleclickppc.com</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- RESULTS PAGE -->
+    <div id="results" class="tab-content-panel">
+        
+        <div class="hero-section">
+            <div class="hero-container">
+                <div class="logo-container">
+                    <img src="assets/img/logojungle.png" alt="JungleClick Logo">
+                </div>
+
+                <p class="hero-tagline">FOR BRANDS THAT WON'T SETTLE FOR "GOOD ENOUGH"</p>
+                
+                <h1 class="hero-title">
+                    Engineered to Build the next <span class="highlight">Category Leaders</span>
+                </h1>
+
+                <p class="hero-subtitle">
+                    We partner with brands ready to outperform their competitors, with systems designed to maximize profits, strengthen ranking, and scale sustainably.
+                </p>
+
+                <button class="cta-button">
+                    <span class="cta-icon"></span>
+                    Book your free PPC Audit
+                </button>
+
+                <div class="brands-trust-section">
+                    <h3 class="brands-trust-title">A FEW OF THE BRANDS THAT TRUST JUNGLECLICK</h3>
+                    
+                    <div class="brands-carousel-wrapper">
+                       <div class="brands-container">
+                            <div class="brand-logo-1">
+                                <img src="assets/img/lgm soil.png" alt="Brand 1 Logo">
+                            </div>
+                            <div class="brand-logo-2">
+                                <img src="assets/img/bughut.png" alt="Brand 2 Logo">
+                            </div>
+                            <div class="brand-logo-3">
+                                <img src="assets/img/ultimatum.png" alt="Brand 3 Logo">
+                            </div>
+                            <div class="brand-logo-4">
+                                <img src="assets/img/better.png" alt="Brand 4 Logo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="certifications-section">
+            <h2>Our team is <span class="highlight">fully certified</span></h2>
+            
+            <div class="cert-badges">
+                <div class="cert-badge">
+                    <div class="cert-icon blue">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+                    <h4>Amazon Video Ads Certification</h4>
+                </div>
+                <div class="cert-badge">
+                    <div class="cert-icon orange">
+                        <i class="fa-solid fa-ad"></i>
+                    </div>
+                    <h4>Amazon Sponsored Ads Certification</h4>
+                </div>
+                <div class="cert-badge">
+                    <div class="cert-icon purple">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h4>Amazon Sponsored Ads Advanced Certification</h4>
+                </div>
+            </div>
+
+            <p class="cert-disclaimer">These certifications don't create results—but they reflect the standards we operate with.</p>
+
+            <h2 class="results-metrics-title">This is a quick look at our results</h2>
+
+            <div class="metrics-display">
+                <div class="metric-display-item">
+                    <div class="metric-circle">84%</div>
+                    <div class="metric-display-label">Average YoY profit growth (partner average)</div>
+                </div>
+                <div class="metric-display-item">
+                    <div class="metric-circle">99%</div>
+                    <div class="metric-display-label">Partner Retention Rate</div>
+                </div>
+                <div class="metric-display-item">
+                    <div class="metric-circle">$8M</div>
+                    <div class="metric-display-label">Revenue influenced / Managed</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="success-stories-section">
+            <div class="content-container">
+                <h2>Your Brand Could Be Our Next Success Story</h2>
+                <p class="subtitle">These brands transformed their performance using our systems—and you can explore exactly how. <strong>Click into each story to see the strategies and results behind their growth.</strong></p>
+
+                <div class="story-cards">
+                    <div class="story-card" onclick="switchTab('lgm-soil')">
+                        <div class="story-card-image">
+                            <img src="assets/img/lgm soil produc.png" alt="LGM Soil Product">
+                        </div>
+                        <div class="story-card-text">
+                            A New Brand bleeding with High ACoS and No Traction—Then Up 1,166% in Sales in Just 6 Months
+                        </div>
+                    </div>
+
+                    <div class="story-card" onclick="switchTab('quick-clean')">
+                        <div class="story-card-image">
+                            <img src="assets/img/quick and clean produc.png" alt="Quick and Clean Product">
+                        </div>
+                        <div class="story-card-text">
+                            From losing -$100,000 Per Month to Add Six Figures in New Monthly Revenue While Dropping ACoS 36% in Just 3 Months
+                        </div>
+                    </div>
+
+                    <div class="story-card" onclick="switchTab('bifenthrin')">
+                        <div class="story-card-image">
+                            <img src="assets/img/bifent.png" alt="Bifenthrin Product">
+                        </div>
+                        <div class="story-card-text">
+                            A Brand Stuck Spinning Its Wheels: 34.66% ACoS, Weak Returns, No Clear Path—Until +607% Sales and 10.89% ACoS in 6 Months
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LGM SOIL PAGE -->
+    <div id="lgm-soil" class="tab-content-panel">
+        <div class="content-container">
+            
+           <div class="chart">
+                <img src="assets/img/grafico lgm soil flecha.png" alt="Performance Growth Chart">
+            </div>
+
+            <div class="large-headline" style="font-size: 40px; max-width: 1000px; margin: 0 auto 80px auto;">
+                A New Brand bleeding with High ACoS and No Traction—Then Up 1,166% in Sales in Just 6 Months
+            </div>
+
+            <div class="two-column-section" style="max-width: 1100px; margin-left: auto; margin-right: auto;">
+                <div class="section-label">The Brand</div>
+                <div class="section-content" style="max-width: 650px;">
+                    <p>LGM Soil Amendments is a family-owned business specializing in premium soil amendments for gardening and commercial applications.</p>
+                    
+                    <p>Despite a strong physical-market reputation, LGM SOIL entered Amazon with no advertising history and limited digital visibility. The category is dominated by established competitors with thousands of reviews, making it difficult for new entries to earn impressions, gain relevance, or sustain profitable CPCs without a strategic foundation.</p>
+                </div>
+            </div>
+
+            <div class="two-column-section" style="max-width: 1100px; margin-left: auto; margin-right: auto;">
+                <div class="section-label">The Problem</div>
+                <div class="section-content" style="max-width: 650px;">
+                    <p>At launch on Amazon, LGM SOIL struggled with low organic rankings, limited visibility, and weak conversion rates. With no previous Sponsored Products history, there was no keyword data to guide targeting or bidding.</p>
+                    
+                    <p>Early campaigns showed an ACoS around 38% and inconsistent impressions, and the account lacked the historical performance signals needed to compete for top-of-search placements.</p>
+                    
+                    <p>Increasing spend aggressively at this stage would have raised costs without improving profitability, so the brand needed a relevance-focused, controlled, and data-driven launch strategy.</p>
+                </div>
+            </div>
+
+            <div class="two-column-section" style="max-width: 1100px; margin-left: auto; margin-right: auto;">
+                <div class="section-label">The Solution</div>
+                <div class="section-content" style="max-width: 650px;">
+                    <p>The strategy centered on building a strong foundation before scaling. The team focused on:</p>
+                    <ul>
+                        <li><strong>Relevance-first optimization:</strong> controlled bids and consistent exposure to build keyword authority and improve organic ranking.</li>
+                        <li><strong>Gradual bid reductions:</strong> as relevance grew, bids were lowered to reduce CPC while maintaining traffic and sales momentum.</li>
+                        <li><strong>Tight keyword selection:</strong> new keywords were added only from converting search terms, ensuring proven purchase intent.</li>
+                        <li><strong>Top-of-search campaigns:</strong> Sponsored Products campaigns targeted premium placements for core soil-related terms to capture high-intent traffic.</li>
+                        <li><strong>Dayparting:</strong> starting in August, bids were raised only during peak converting hours and days to improve efficiency and reduce ACoS.</li>
+                    </ul>
+                    
+                    <p>All growth came from Sponsored Products alone, with no changes to the catalog and no Sponsored Brands, Videos, or Display.</p>
+                </div>
+            </div>
+
+            <div class="two-column-section" style="max-width: 1100px; margin-left: auto; margin-right: auto;">
+                <div class="section-label">The Results</div>
+                <div class="section-content" style="max-width: 650px;">
+                    <p>Within six months, the strategy produced clear performance gains:</p>
+                    <ul>
+                        <li><strong>Revenue growth:</strong> monthly sales increased from $1.2K in May to $15.2K in August—a 1,166% increase driven by better ranking and optimized ads.</li>
+                        <li><strong>ACoS improvement:</strong> starting in the high 30s, ACoS dropped to 16–19% consistently by October.</li>
+                        <li><strong>Lower CPC:</strong> bids decreased as relevance increased, reducing cost-per-click and protecting margins.</li>
+                        <li><strong>Stronger presence:</strong> improved ranking and consistent impressions led to more organic visibility and repeat conversions.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="chart">
+                <img src="assets/img/grafico lgm soil.png" alt="Results Chart">
+            </div>
+
+            <div style="max-width: 900px; margin: 80px auto; text-align: center;">
+                <p style="font-size: 26px; line-height: 1.6; margin-bottom: 30px;">
+                    LGM SOIL's launch shows how relevance-driven optimization, disciplined bidding, and strategic dayparting can transform a new brand in a competitive category—unlocking significant growth without overspending or expanding the product line.
+                </p>
+                
+                <p style="font-size: 26px; line-height: 1.6; font-weight: 600;">
+                    Ready to scale your Amazon performance? Partner with us and transform your brand's growth trajectory.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- QUICK AND CLEAN PAGE -->
+    <div id="quick-clean" class="tab-content-panel">
+        <div style="background: #f5f5f0; padding: 40px 0; text-align: center;">
+            <div class="container">
+                <div style="max-width: 600px; margin: 0 auto; background: none; padding: 0px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <div style="height: 250px; display: flex; align-items: center; justify-content: center;">
+                        <img 
+                            src="assets/img/quick and clean grafico.png" 
+                            alt="Quick Clean Performance Chart"
+                            style="max-width: 100%; max-height: 100%; display: block;"
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: #f5f5f0;">
+            <div class="container">
+                <h1 style="font-size: 36px; font-weight: 700; text-align: center; line-height: 1.3; max-width: 1200px; margin: 0 auto; color: #1a1a1a;">
+                    From losing -$100,000 Per Month to Add Six Figures in New Monthly Revenue While Dropping ACoS 36%
+                </h1>
+            </div>
+        </div>
+
+        <div style="background: #f5f5f0; padding: 80px 0;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div style="display: flex; gap: 80px; max-width: 1100px; margin: 0 auto;">
+                            <div style="min-width: 200px;">
+                                <h2 style="font-size: 42px; color: #999; font-weight: 400; margin: 0;">The Brand</h2>
+                            </div>
+                            <div style="flex: 1; max-width: 600px;">
+                                <p style="font-size: 18px; line-height: 1.6; margin-bottom: 20px; color: #1a1a1a;">
+                                    Quick & Clean has been an established Amazon brand for several years, known for its specialized cleaning solutions for single-serve coffee machines and kitchen appliances.
+                                </p>
+                                <p style="font-size: 18px; line-height: 1.6; margin: 0; color: #1a1a1a;">
+                                    Despite strong brand recognition their sales remained stable but flat, and advertising efficiency had declined. To break through the plateau, the brand needed a complete performance reset—one capable of protecting its branded visibility, restoring profitability, and unlocking scalable revenue growth.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: #f5f5f0; padding: 80px 0;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div style="display: flex; gap: 80px; max-width: 1100px; margin: 0 auto;">
+                            <div style="min-width: 200px;">
+                                <h2 style="font-size: 42px; color: #999; font-weight: 400; margin: 0;">The Problem</h2>
+                            </div>
+                            <div style="flex: 1; max-width: 600px;">
+                                <p style="font-size: 18px; line-height: 1.6; margin-bottom: 20px; color: #1a1a1a;">
+                                    Before management began, Quick & Clean's advertising structure showed clear inefficiencies. <strong>ACoS</strong> and <strong>TACoS</strong> were elevated, keyword relevancy was weak, and the account lacked a structured keyword architecture. CPCs were high across core terms, and branded queries were not protected—allowing competitors to intercept valuable traffic.
+                                </p>
+                                <p style="font-size: 18px; line-height: 1.6; margin-bottom: 20px; color: #1a1a1a;">
+                                    Sponsored Brands and Sponsored Display were underutilized, while duplicated targetings and fragmented data caused unnecessary spend.
+                                </p>
+                                <p style="font-size: 18px; line-height: 1.6; margin: 0; color: #1a1a1a;">
+                                    Although sales velocity remained strong, the PPC system could not support scalable growth. The performance trend shifted only when the restructuring process started.
+                                </p>
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: 20px; min-width: 300px;">
+                                <img 
+                                    src="assets/img/quick and clean produc 1.png" 
+                                    alt="Product Image 1"
+                                    style="width: 100%; height: 280px; border-radius: 8px; object-fit: contain;"
+                                >
+                                <img 
+                                    src="assets/img/quick and clean produc 2.png" 
+                                    alt="Product Image 2"
+                                    style="width: 100%; height: 280px; border-radius: 8px; object-fit: contain;"
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: #f5f5f0; padding: 80px 0;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div style="display: flex; gap: 80px; max-width: 1100px; margin: 0 auto;">
+                            <div style="min-width: 200px;">
+                                <h2 style="font-size: 42px; color: #999; font-weight: 400; margin: 0;">The Solution</h2>
+                            </div>
+                            <div style="flex: 1; max-width: 600px;">
+                                <p style="font-size: 18px; line-height: 1.6; margin-bottom: 15px; color: #1a1a1a;">
+                                    A complete full-funnel PPC rebuild was deployed to restore efficiency, defend branded space, and unlock incremental growth. Key actions included:
+                                </p>
+                                <ul style="font-size: 18px; line-height: 1.8; color: #1a1a1a; padding-left: 20px;">
+                                    <li style="margin-bottom: 15px;"><strong>Structural Rebuild:</strong> Isolated high-performing keywords and ASINs into dedicated campaigns for better bid control, cleaner data, and improved placement profitability.</li>
+                                    <li style="margin-bottom: 15px;"><strong>Audience & Keyword Expansion:</strong> Launching new Sponsored Products, Brands, and Display campaigns to reach untapped audiences and high-value keyword clusters.</li>
+                                    <li style="margin-bottom: 15px;"><strong>Brand Protection:</strong> Creating keyword- and ASIN-level defense campaigns to prevent competitor conquesting on branded searches.</li>
+                                    <li style="margin-bottom: 15px;"><strong>N-Gram Expansion:</strong> Using N-gram insights to identify strong converting terms and activate new phrase-match and long-tail campaigns.</li>
+                                    <li style="margin-bottom: 15px;"><strong>Targeting Cleanup:</strong> Removing irrelevant or duplicated targets to improve traffic quality and budget efficiency.</li>
+                                    <li style="margin-bottom: 15px;"><strong>Weekly Optimization & Dayparting:</strong> Continuously refining bids and placements while concentrating spend during peak converting hours.</li>
+                                    <li><strong>Listing Optimization & Rank Tracking:</strong> Enhancing listings for better conversions and monitoring organic rankings to protect key positions.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: #f5f5f0; padding: 80px 0;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div style="display: flex; gap: 80px; max-width: 1100px; margin: 0 auto;">
+                            <div style="min-width: 200px;">
+                                <h2 style="font-size: 42px; color: #999; font-weight: 400; margin: 0;">The Results</h2>
+                            </div>
+                            <div style="flex: 1;">
+                                <div style="background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 40px;">
+                                    <div style="height: 300px; display: flex; align-items: center; justify-content: center; border-radius: 4px;">
+                                        <img 
+                                            src="assets/img/quick and clean grafico.png" 
+                                            alt="Results Graph Image"
+                                            style="max-width: 100%; max-height: 100%; object-fit: contain;"
+                                        >
+                                    </div>
+                                </div>
+
+                                <p style="font-size: 18px; line-height: 1.6; margin-bottom: 30px; color: #1a1a1a; max-width: 600px;">
+                                    The improvements were immediate and clearly reflected in Amazon's sales data:
+                                </p>
+
+                                <ul style="font-size: 18px; line-height: 1.8; color: #1a1a1a; padding-left: 20px; max-width: 600px;">
+                                    <li style="margin-bottom: 20px;">
+                                        <strong>+$100,000 in New Monthly Revenue</strong> (within 3 months): Growth accelerated right at onboarding, surpassing all previous sales ceilings.
+                                    </li>
+                                    <li style="margin-bottom: 20px;">
+                                        <strong>Significant ACoS Reduction:</strong> Stronger relevance and controlled bidding sharply lowered acquisition costs.
+                                    </li>
+                                    <li style="margin-bottom: 20px;">
+                                        <strong>Lower TACoS & Better Organic Rank:</strong> Higher-quality traffic and improved rankings strengthened long-term profitability.
+                                    </li>
+                                    <li style="margin-bottom: 20px;"><strong>Reduced CPCs:</strong> Refined segmentation and bid optimization lowered CPCs while increasing impressions.</li>
+                                    <li style="margin-bottom: 20px;"><strong>Higher Conversion Rates:</strong> Listing enhancements and more qualified traffic boosted conversion consistency.</li>
+                                    <li><strong>Expanded Category Presence:</strong> Long-tail targeting, new audiences, and brand protection increased overall impression share efficiently.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: #f5f5f0; padding: 30px">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+                            <p style="font-size: 24px; line-height: 1.6; margin-bottom: 30px; color: #1a1a1a;">
+                                Quick & Clean shifted from a plateauing account to a scalable, predictable revenue engine—adding over <strong>$100,000 in monthly revenue</strong> while reducing advertising costs.
+                            </p>
+                            <p style="font-size: 24px; line-height: 1.6; margin: 0; color: #1a1a1a; font-weight: 600; padding-bottom: 40px;">
+                                Ready to scale your Amazon performance? Partner with us and transform your brand's growth trajectory.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BIFENTHRIN PAGE - CORREGIDO -->
+    <div id="bifenthrin" class="tab-content-panel">
+        <div class="content-container">
+            
+           <div class="chart">
+                <img src="assets/img/grafico bifenthrin.png" alt="Bifenthrin Performance Chart">
+            </div>
+
+            <div class="large-headline" style="font-size: 36px; max-width: 1200px; margin: 0 auto 80px auto;">
+                A Brand Stuck Spinning Its Wheels: 34.66% ACoS, Weak Returns, No Clear Path—Until +607% Sales and 10.89% ACoS in 6 Months
+            </div>
+
+            <div class="two-column-section" style="max-width: 1100px; margin-left: auto; margin-right: auto;">
+                <div class="section-label">The Brand</div>
+                <div class="section-content" style="max-width: 650px;">
+                    <p>Bifenthreen is a small but specialized pest-control brand offering <strong>Bifenthrin Plus-C</strong>, a professional-grade yet family-safe liquid insecticide designed for both indoor and outdoor use.</p>
+                    
+                    <p>Despite having a strong value proposition, the brand entered one of Amazon's most competitive categories—dominated by established players with extensive review depth and aggressive Sponsored Products strategies. The account was active but underperforming, with inconsistent visibility and inefficient campaign structure.</p>
+                </div>
+            </div>
+
+            <div class="two-column-section" style="max-width: 1100px; margin-left: auto; margin-right: auto;">
+                <div class="section-label">The Problem</div>
+                <div class="section-content" style="max-width: 650px;">
+                    <p>Before optimization, the Amazon account struggled with:</p>
+                    <ul>
+                        <li><strong>34.66% ACoS</strong>, too high for the category</li>
+                        <li>Weak <strong>keyword relevancy</strong> and inflated <strong>CPCs</strong></li>
+                        <li>No strategic <strong>keyword architecture</strong> or segmentation</li>
+                        <li><strong>Underperforming campaigns</strong> unable to identify converting signals</li>
+                        <li><strong>Low conversion rates</strong> due to irrelevant search terms</li>
+                    </ul>
+                    <p>Without a data-driven structure, any attempt to scale would only increase spend without improving conversions, ranking, or profitability.</p>
+                </div>
+            </div>
+
+            <div class="two-column-section" style="max-width: 1100px; margin-left: auto; margin-right: auto;">
+                <div class="section-label">The Solution</div>
+                <div class="section-content" style="max-width: 650px;">
+                    <p>We executed a complete PPC rebuild focused on rapid data collection and precise optimization:</p>
+                    <ul>
+                        <li><strong>Launched 85+ campaigns</strong> to quickly gather conversion data across keywords, ASINs, and audiences.</li>
+                        <li><strong>Adjusted bids strategically</strong> to strengthen performance on proven high-intent targets.</li>
+                        <li><strong>Applied daily negative keywords</strong> to remove irrelevant traffic and protect spend.</li>
+                        <li><strong>Pruned inefficient campaigns</strong>, consolidating budget toward profitable segments.</li>
+                        <li><strong>Used N-gram and ASIN-level analysis</strong> to uncover the specific terms and competitors that consistently converted.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="two-column-section" style="max-width: 1100px; margin-left: auto; margin-right: auto;">
+                <div class="section-label">The Results</div>
+                <div class="section-content" style="max-width: 650px;">
+                    <p>In six months, Bifenthreen achieved a complete turnaround:</p>
+                    <ul>
+                        <li><strong>+607% increase in monthly sales</strong> (from $10,152 to $71,787)</li>
+                        <li>ACoS reduced from <strong>34.66% to 10.89%</strong></li>
+                        <li>CPC lowered by <strong>64%</strong> (from $1.48 to $0.54)</li>
+                        <li>Higher conversion rates thanks to cleaner traffic and targeted bidding</li>
+                        <li>Stronger organic ranking across core pest-control terms</li>
+                        <li>A fully profitable, scalable PPC structure ready for continued growth</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="max-width: 900px; margin: 80px auto; text-align: center;">
+                <p style="font-size: 26px; line-height: 1.6; margin-bottom: 30px;">
+                    Bifenthreen's results show how a data-driven, relevance-focused PPC strategy can turn a weak account into a profitable, scalable engine.
+                </p>
+                
+                <p style="font-size: 26px; line-height: 1.6; font-weight: 600;">
+                    Ready to scale your Amazon performance? Partner with us and transform your brand's growth trajectory.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function switchTab(tabName) {
+            // Ocultar todos los paneles de contenido
+            const allPanels = document.querySelectorAll('.tab-content-panel');
+            allPanels.forEach(panel => {
+                panel.classList.remove('active');
+            });
+
+            // Remover la clase active de todos los botones
+            const allTabs = document.querySelectorAll('.nav-tab-item');
+            allTabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Mostrar el panel seleccionado
+            document.getElementById(tabName).classList.add('active');
+
+            // Activar el botón correspondiente - encontrar el botón que corresponde
+            const buttons = document.querySelectorAll('.nav-tab-item');
+            buttons.forEach(btn => {
+                if (btn.getAttribute('onclick') === `switchTab('${tabName}')`) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Scroll suave hacia arriba
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
