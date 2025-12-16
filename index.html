@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./css/output.css" />
+
     <style>
         * {
             margin: 0;
@@ -125,12 +127,14 @@
             gap: 15px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(255, 140, 66, 0.4);
+            text-decoration: none;
         }
 
         .cta-button:hover {
             background: #ff7a2e;
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(255, 140, 66, 0.5);
+            color: white;
         }
 
         .cta-icon {
@@ -244,20 +248,20 @@
         }
 
         /* Certifications Section */
-        .certifications-section {
-            background: linear-gradient(90deg, #1a2a3a 0%, #2d4a5e 50%, #3d5a6e 100%);
+        .certification-section {
+            background: #1a202c;;
             padding: 30px 40px 80px 40px;
             text-align: center;
             color: white;
         }
 
-        .certifications-section h2 {
+        .certification-section h2 {
             font-size: 48px;
             font-weight: 700;
             margin-bottom: 60px;
         }
 
-        .certifications-section h2 .highlight {
+        .certification-section h2 .highlight {
             color: #ff8c42;
         }
 
@@ -517,261 +521,447 @@
             object-fit: contain;
         }
 
-        /* HOME PAGE STYLES */
-        .header.confirmation-header {
-            background-color: #f5f5f0;
+        /* HOME PAGE STYLES - NEW */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        :root {
+            --primary-color: #fdfdfd;
+            --secondary-color: #f5a623;
+            --bg-color: #1a202c;
+            --text-color: #fffafa;
+            --button-color: #f5a623;
+            --jungle-orange: #ff8c00;
         }
 
-        .top-banner {
-            background-color: #f5f5f0;
-            padding: 20px;
-            text-align: center;
+        .home-header {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a202c 0%, #234786 100%);
+            padding-top: 4rem;
         }
 
-        .logo-confirmation {
-            height: 50px;
-            width: auto;
+        .home-navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(26, 32, 44, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 1rem 0;
         }
 
-        .main-title-confirmation {
-            font-size: 42px;
-            font-weight: 700;
-            color: #1a1a1a;
-            line-height: 1.3;
+        .home-navbar .container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 0 5%;
+            width: 100%;
         }
 
-        .video-invitation-text {
-            font-size: 18px;
-            color: #666;
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
         }
 
-        .watch-video-link {
-            color: #ff8c42;
+        .nav-button {
+            padding: 0.5rem 1rem;
+            background-color: transparent;
+            color: white;
             text-decoration: none;
+            border-radius: 5px;
             font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            border: 2px solid var(--jungle-orange);
         }
 
-        .watch-video-link:hover {
-            text-decoration: underline;
+        .nav-button:hover {
+            background-color: var(--jungle-orange);
+            color: var(--bg-color);
+            transform: translateY(-2px);
         }
 
-        .video-mockup-container {
-            max-width: 800px;
-            margin: 40px auto;
+        .home-header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
 
-        .video-responsive-wrapper {
+        .home-logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+            animation: fadeInLeft 1s ease-out;
+        }
+
+        .home-logo {
+            width: 120px;
+            height: auto;
+        }
+
+        .home-company-name {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--jungle-orange);
+            margin-bottom: 0.5rem;
+        }
+
+        .home-tagline {
+            font-size: 0.8rem;
+            font-style: italic;
+            color: var(--secondary-color);
+        }
+
+        .home-h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-top: 0.5rem;
+            animation: fadeInUp 1s ease-out;
+            text-align: left;
+            color: white;
+        }
+
+        .home-highlight {
+            color: var(--jungle-orange);
+            white-space: nowrap;
+        }
+
+        .home-description {
+            font-size: 1rem;
+            max-width: 600px;
+            margin-bottom: 1.5rem;
+            animation: fadeIn 1s ease-out 1s both;
+            text-align: left;
+            color: white;
+        }
+
+        .home-cta-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--button-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            animation: fadeIn 1s ease-out 1.5s both;
+            font-size: 0.9rem;
+        }
+
+        .home-cta-button:hover {
+            background-color: #ff6b00;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+
+        .home-image-container {
             position: relative;
             width: 100%;
-            padding-bottom: 56.25%;
-            height: 0;
+            padding-bottom: 60%;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
             overflow: hidden;
-            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            animation: fadeInRight 1s ease-out;
+            margin-top: 2rem;
         }
 
-        /* ESTILOS DEL VIDEO REAL */
-        .video-real {
+        .home-image-container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .home-image-container img {
             position: absolute;
             top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 16px;
-            overflow: hidden;
-            background: black;
-        }
-
-        .video-real video {
+            left: 50%;
+            transform: translateX(-50%);
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center top;
+            border-radius: 15px;
         }
 
-        .confirmation-message {
-            font-size: 18px;
-            color: #666;
-            line-height: 1.6;
-            max-width: 700px;
+        .home-dynamic-text-container {
+            position: relative;
+            height: 40px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            animation: fadeIn 1s ease-out 0.75s both;
         }
 
-        .features-section-alt {
-            background-color: #f5f5f0;
-            padding: 60px 20px;
-        }
-
-        .small-sun-title {
-            font-size: 16px;
-            color: #ff8c42;
+        #dynamicText {
+            font-size: 1.2rem;
             font-weight: 600;
+            color: #ff6600;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            line-height: 40px;
+            text-align: left;
+            opacity: 1;
+            transition: all 0.5s ease-in-out;
         }
 
-        .main-feature-title {
-            font-size: 42px;
+        .changing-word {
+            display: inline-block;
+            position: relative;
+            transition: all 0.5s ease-in-out;
+            color: #f7f7f7;
+            font-weight: 800;
+            text-shadow: 0 0 5px rgba(255, 102, 0, 0.5);
+        }
+
+        .changing-word.active {
+            animation: rotateWord 0.5s ease-in-out;
+        }
+
+        @keyframes rotateWord {
+            0% {
+                transform: rotateX(0deg);
+                opacity: 1;
+            }
+            50% {
+                transform: rotateX(90deg);
+                opacity: 0;
+            }
+            100% {
+                transform: rotateX(0deg);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .home-why-section {
+            color: black;
+            background-color: white;
+        }
+
+        .home-why-section h1,
+        .home-why-section h3,
+        .home-why-section p {
+            color: black;
+        }
+
+        .home-section-title {
+            font-size: 2.5rem;
             font-weight: 700;
-            color: #1a1a1a;
-            line-height: 1.3;
+            color: var(--jungle-orange);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
         }
 
-        .text-highlight-green {
-            color: #4caf50;
-            font-weight: 700;
+        .home-section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--jungle-orange);
         }
 
-        .text-highlight-red {
-            color: #ff6b6b;
-            font-weight: 700;
+        .home-white-section,
+        .home-blue-section {
+            background: linear-gradient(135deg, #0a2647, #144272, #205295);
+            color: var(--text-color);
+            padding: 4rem 0;
         }
 
-        .feature-subtitle {
-            font-size: 18px;
-            color: #666;
-            max-width: 800px;
+        .home-white-section .home-section-title,
+        .home-blue-section .home-section-title {
+            color: var(--primary-color);
         }
 
-        .feature-item {
-            padding: 30px 20px;
-            background: white;
+        .home-card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .home-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
             border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            width: calc(50% - 1rem);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .home-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(
+                circle,
+                rgba(255, 255, 255, 0.1) 0%,
+                rgba(255, 255, 255, 0) 70%
+            );
+            transform: rotate(30deg);
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+
+        .home-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .home-card:hover::before {
+            opacity: 1;
+        }
+
+        .home-icon {
+            font-size: 2.5rem;
+            color: var(--jungle-orange);
+            margin-bottom: 1rem;
             transition: all 0.3s ease;
         }
 
-        .feature-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        .home-card:hover .home-icon {
+            transform: scale(1.1);
         }
 
-        .feature-icon-alt {
-            font-size: 48px;
-            color: #ff8c42;
+        .home-card h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
         }
 
-        .feature-item h5 {
-            font-size: 16px;
-            color: #1a1a1a;
-            line-height: 1.4;
+        .home-card p {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+
+        .home-certification-item {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
-        .testimonial-section {
-            background-color: #f5f5f0;
-            padding: 60px 20px;
+        .home-certification-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
         }
 
-        .section-title {
-            font-size: 42px;
-            font-weight: 700;
-            color: #1a1a1a;
+        .home-certification-item .icon-container {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            margin-bottom: 1rem;
         }
 
-        .icon-megaphone {
-            font-size: 42px;
-            color: #ff8c42;
+        .home-certification-item .icon {
+            font-size: 3rem;
+            color: white;
         }
 
-        .testimonial-grid-images {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+        .home-certification-item p {
+            text-align: center;
+            font-weight: 600;
+            color: #1a202c;
+            font-size: 0.9rem;
+        }
+
+        .home-container {
+            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-        }
-
-        .testimonial-image-container {
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-
-        .testimonial-image-container:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-
-        .testimonial-screenshot {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
-        }
-
-        .appointment-section {
-            background-color: #f5f5f0;
-            padding: 60px 20px;
-        }
-
-        .appointment-card-content {
-            background: white;
-            border-radius: 16px;
-            padding: 60px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            position: relative;
-        }
-
-        .appointment-logo {
-            position: absolute;
-            top: 30px;
-            right: 30px;
-        }
-
-        .appointment-logo img {
-            height: 60px;
-            width: auto;
-        }
-
-        .appointment-title {
-            font-size: 48px;
-            font-weight: 700;
-            color: #1a1a1a;
-        }
-
-        .appointment-image-wrapper {
-            border: 4px solid #ff8c42;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        .appointment-img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .appointment-text-block {
-            color: #333;
-        }
-
-        .appointment-text-main {
-            font-size: 18px;
-            line-height: 1.7;
-            margin-bottom: 20px;
-            color: #1a1a1a;
-        }
-
-        .appointment-text-sub {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 15px;
-            color: #666;
-        }
-
-        .appointment-signature {
-            font-size: 16px;
-            color: #1a1a1a;
-            font-weight: 600;
-        }
-
-        .appointment-email {
-            color: #ff8c42;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .appointment-email:hover {
-            text-decoration: underline;
-        }
-
-        .appointment-dot {
-            font-size: 8px;
+            padding: 2rem 0;
         }
 
         /* Responsive */
@@ -825,18 +1015,108 @@
                 font-size: 18px;
             }
 
-            .main-title-confirmation {
-                font-size: 32px;
+            .home-card {
+                width: 100%;
             }
 
-            .appointment-card-content {
-                padding: 40px 20px;
+            .home-header-content {
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: space-between;
             }
 
-            .appointment-logo {
-                position: static;
-                margin-bottom: 20px;
+            .home-text-content {
+                flex: 1;
+                padding-right: 2rem;
+            }
+
+            .home-image-container {
+                flex: 1;
+                margin-top: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .home-logo {
+                width: 100px;
+            }
+
+            .home-h1 {
+                font-size: 2rem;
+            }
+
+            #dynamicText {
+                font-size: 1rem;
+            }
+
+            .home-description {
+                font-size: 0.9rem;
+            }
+
+            .home-cta-button {
+                font-size: 0.8rem;
+                padding: 0.7rem 1.2rem;
+                display: block;
                 text-align: center;
+                margin: 0 auto;
+            }
+
+            .home-image-container {
+                padding-bottom: 100%;
+            }
+
+            .home-image-container img {
+                object-position: center 20%;
+            }
+
+            .home-navbar .home-container {
+                justify-content: center;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .nav-button {
+                padding: 0.4rem 0.8rem;
+            }
+
+            .home-header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .home-text-content {
+                flex: 1;
+            }
+
+            .home-image-container {
+                flex: 1;
+                margin-top: 2rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .home-header-content {
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: space-between;
+            }
+
+            .home-text-content {
+                flex: 1;
+                padding-right: 2rem;
+            }
+
+            .home-image-container {
+                flex: 1;
+                margin-top: 0;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .home-description {
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -853,173 +1133,473 @@
         </div>
     </div>
 
-    <!-- HOME PAGE -->
+    <!-- HOME PAGE - NEW -->
     <div id="home" class="tab-content-panel active">
-        <!-- Sección 1: Confirmación del Audit -->
-        <header class="header confirmation-header">
-            <div class="top-banner">
-                <img src="assets/img/logojungle.png" class="logo-confirmation" alt="Logo JungleClick">
-            </div>
-            
-            <div class="container text-center my-5 content-area">
-                <h1 class="main-title-confirmation mt-5 mb-3">
-                    Tu Amazon PPC Audit is Scheduled<br>
-                    Please Confirm Your Spot!
-                </h1>
-
-                <p class="video-invitation-text lead mb-4">
-                    Want to get the most out out of your audit? <a href="#video-section" class="watch-video-link">Watch the video 👇</a>
-                </p>
-
-                <!-- Contenedor del Video REAL -->
-                <div id="video-section" class="video-mockup-container mx-auto">
-                    <div class="video-responsive-wrapper">
-                        <div class="video-real">
-                            <video controls playsinline>
-                                <source src="assets/video/VIDEO_EXPLICATIVO.mp4" type="video/mp4">
-                                Tu navegador no soporta el elemento de video.
-                            </video>
+        <header class="home-header">
+            <div class="home-container">
+                <div class="home-header-content">
+                    <div class="home-text-content">
+                        <div class="home-logo-container" id="logoContainer">
+                            <img src="assets/img/logo.png" alt="JungleClick Logo" class="home-logo" />
+                            <p class="home-tagline">Turning Passion Into Profits</p>
                         </div>
+                        <h1 class="home-h1">Welcome to <span class="home-highlight">JungleClick</span></h1>
+                        <h2 style="color: var(--text-color); font-size: 1.3rem; margin-bottom: 0.5rem; text-align: left;">
+                            Data-Driven Amazon Ads Marketing Agency
+                        </h2>
+                        <div class="home-dynamic-text-container">
+                            <p id="dynamicText">
+                                For <span class="changing-word">Ambitious</span> Amazon Sellers like you
+                            </p>
+                        </div>
+                        <p class="home-description">
+                            At JungleClick, we focus on results, working exclusively with brands where
+                            we know we can deliver exceptional outcomes. We don't just sell
+                            products—we build successful brands through data-backed strategies that
+                            help you dominate the marketplace.
+                        </p>
+                        <a href="#process" class="home-cta-button">
+                            <i class="fas fa-chart-line"></i> Discover Our Process
+                        </a>
+                    </div>
+                    <div class="home-image-container">
+                        <img src="assets/img/photo_cut.png" alt="JungleClick Team Member" />
                     </div>
                 </div>
-
-                <!-- Mensaje de confirmación inferior -->
-                <p class="confirmation-message mt-5 mb-5 mx-auto">
-                    We've sent you the confirmation details by email! Make sure to add it to your calendar right now
-                    so you don't miss your free 30-minute Amazon PPC Audit.
-                </p>
             </div>
         </header>
-
-        <!-- Sección 2: Features -->
-        <section class="features-section-alt py-5">
-            <div class="container mt-5">
-                <p class="small-sun-title text-center mb-4">
-                    <i class="fa-solid fa-sun me-2"></i> Why JungleClick?
-                </p>
-
-                <h2 class="main-feature-title mb-3 text-center">
-                    Give Us <span class="text-highlight-green">180 Days</span>,<br>
-                    If We Don't Deliver <span class="text-highlight-red">We Pay You</span>
-                </h2>
-                
-                <p class="feature-subtitle text-center mx-auto mb-5">
-                    Over the next 180 days you'll see at least a 10% - 30% improvement on your Return on Ad Spend 
-                </p>
-
-                <div class="row d-flex justify-content-center text-center g-5">
-                    <div class="col-12 col-sm-6 col-lg-3 feature-item">
-                        <i class="fa-solid fa-chess-knight feature-icon-alt mb-3"></i> 
-                        <h5 class="fw-bold">Data-driven strategies tailored to your brand</h5>
-                    </div>
-                    
-                    <div class="col-12 col-sm-6 col-lg-3 feature-item">
-                        <i class="fa-solid fa-calendar-check feature-icon-alt mb-3"></i>
-                        <h5 class="fw-bold">100% Amazon PPC specialization</h5>
-                    </div>
-
-                    <div class="col-12 col-sm-6 col-lg-3 feature-item">
-                        <i class="fa-solid fa-handshake feature-icon-alt mb-3"></i>
-                        <h5 class="fw-bold">Performance-based pricing, no long-term contracts</h5>
-                    </div>
-
-                    <div class="col-12 col-sm-6 col-lg-3 feature-item">
-                        <i class="fa-solid fa-clipboard-list feature-icon-alt mb-3"></i>
-                        <h5 class="fw-bold">Free personalized PPC audit – no strings attached</h5>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección 3: Testimonios -->
-        <section class="testimonial-section py-5">
-            <div class="container-fluid">
-                <h2 class="section-title text-center mb-5">
-                    <span class="icon-megaphone"><i class="fa-solid fa-bullhorn me-2"></i></span> Listen to what other Amazon Sellers are saying
-                </h2>
-
-                <div class="testimonial-grid-images mx-auto">
-                    <div class="testimonial-image-container img-daniel">
-                        <img src="assets/img/testimonio.png" alt="Testimonio de cliente 1" class="testimonial-screenshot">
-                    </div>
-
-                    <div class="testimonial-image-container img-sarah">
-                        <img src="assets/img/testimonio2.png" alt="Testimonio de cliente 2" class="testimonial-screenshot">
-                    </div>
-
-                    <div class="testimonial-image-container img-patrick">
-                        <img src="assets/img/testimonio3.png" alt="Testimonio de cliente 3" class="testimonial-screenshot">
-                    </div>
-
-                    <div class="testimonial-image-container img-jennifer">
-                        <img src="assets/img/testimonio4.png" alt="Testimonio de cliente 4" class="testimonial-screenshot">
-                    </div>
-
-                    <div class="testimonial-image-container img-robert">
-                        <img src="assets/img/testimonio5.png" alt="Testimonio de cliente 5" class="testimonial-screenshot">
-                    </div>
-                    
-                    <div class="testimonial-image-container img-michael">
-                        <img src="assets/img/testimonio6.png" alt="Testimonio de cliente 6" class="testimonial-screenshot">
-                    </div>
-
-                    <div class="testimonial-image-container img-emily">
-                        <img src="assets/img/testimonio7.png" alt="Testimonio de cliente 7" class="testimonial-screenshot">
-                    </div>
-
-                    <div class="testimonial-image-container img-new">
-                        <img src="assets/img/testimonio.png" alt="Testimonio de cliente 8" class="testimonial-screenshot">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección 4: Detalles de la Cita -->
-        <section class="appointment-section py-5">
-            <div class="container my-5 appointment-card-content"> 
-                <div class="appointment-logo">
-                    <img src="assets/img/logojungle.png" alt="Logo de la Empresa">
-                </div>
-
-                <div class="row mb-5">
-                    <div class="col-12 text-center">
-                        <h1 class="appointment-title mb-0">Appointment Details</h1>
-                    </div>
-                </div>
-
-                <div class="row align-items-center">
-                    <div class="col-12 col-md-4 d-flex justify-content-center mb-4 mb-md-0">
-                        <div class="appointment-image-wrapper">
-                            <img src="assets/img/empresario.png" class="img-fluid appointment-img" alt="Andrew Pernia, CEO and Founder">
+        <main>
+            <section class="certification-section">
+                <div class="home-container">
+                    <h2 class="text-5xl font-bold text-center mb-16 text-white">
+                        Our Team is fully certified
+                    </h2>
+                    <div id="badge-carousel" style="display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                        <div class="home-certification-item animate-float">
+                            <div class="icon-container" style="background-color: #4299e1">
+                                <i class="icon fas fa-play-circle"></i>
+                            </div>
+                            <p>Amazon Video Ads Certification</p>
+                        </div>
+                        <div class="home-certification-item animate-float animation-delay-200">
+                            <div class="icon-container" style="background-color: #ed8936">
+                                <i class="icon fas fa-ad"></i>
+                            </div>
+                            <p>Amazon Sponsored Ads Certification</p>
+                        </div>
+                        <div class="home-certification-item animate-float animation-delay-400">
+                            <div class="icon-container" style="background-color: #9f7aea">
+                                <i class="icon fas fa-chart-line"></i>
+                            </div>
+                            <p>Amazon Sponsored Ads Advanced Certification</p>
                         </div>
                     </div>
-
-                    <div class="col-12 col-md-8 appointment-text-block">
-                        <p class="appointment-text-main">
-                            Thank you for scheduling your Amazon PPC Audit. We help amazon sellers optimize ad spend, cut wasted budget, and scale profitably on Amazon. And we stand by it with our 180-day guarantee: if we don't improve your Return on Ad Spend by at least 10%, we pay you back.
+                </div>
+            </section>
+            <style>
+                .container {
+                    max-width: 1500px;
+                    margin: 0 auto;
+                    position: relative;
+                    z-index: 10;
+                }
+                h2 {
+                    font-size: 3rem;
+                    font-weight: bold;
+                    text-align: center;
+                    margin-bottom: 4rem;
+                    color: white;
+                }
+                #badge-carousel {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 2rem;
+                    flex-wrap: wrap;
+                }
+                .certification-item {
+                    background-color: white;
+                    padding: 1rem;
+                    border-radius: 0.75rem;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    cursor: pointer;
+                    transition: all 0.3s ease-in-out;
+                }
+                .certification-item:hover {
+                    transform: scale(1.05);
+                    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+                }
+                .certification-item img {
+                    width: 260px;
+                    height: 160px;
+                    object-fit: contain;
+                    margin-bottom: 1rem;
+                }
+                .certification-item p {
+                    text-align: center;
+                    font-weight: 600;
+                    color: #1a202c;
+                }
+                .modal {
+                    display: none;
+                    position: fixed;
+                    z-index: 100;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    overflow: auto;
+                }
+                .modal-content {
+                    background-color: white;
+                    margin: 5% auto;
+                    padding: 2rem;
+                    border-radius: 0.5rem;
+                    max-width: 500px;
+                    width: 90%;
+                    position: relative;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+                    animation: modalAppear 0.3s ease-out;
+                }
+                @keyframes modalAppear {
+                    from {
+                        opacity: 0;
+                        transform: translateY(-60%);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(-50%);
+                    }
+                }
+                .close {
+                    color: #aaa;
+                    float: right;
+                    font-size: 28px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    transition: color 0.2s;
+                }
+                .close:hover,
+                .close:focus {
+                    color: #000;
+                    text-decoration: none;
+                }
+                @keyframes float {
+                    0% {
+                        transform: translateY(0px);
+                    }
+                    50% {
+                        transform: translateY(-10px);
+                    }
+                    100% {
+                        transform: translateY(0px);
+                    }
+                }
+                .animate-float {
+                    animation: float 3s ease-in-out infinite;
+                }
+                .animation-delay-200 {
+                    animation-delay: 200ms;
+                }
+                .animation-delay-400 {
+                    animation-delay: 400ms;
+                }
+                @media (max-width: 768px) {
+                    .modal-content {
+                        width: 95%;
+                        margin: 10% auto;
+                    }
+                }
+            </style>
+            <div id="certModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h3 id="modalTitle"></h3>
+                    <img
+                        id="modalImage"
+                        src=""
+                        alt=""
+                        style="width: 100%; height: auto; object-fit: contain; margin-bottom: 1rem"
+                    />
+                    <p id="modalDescription"></p>
+                </div>
+            </div>
+            <script>
+                const certifications = [
+                    {
+                        name: 'Amazon Video Ads Certification',
+                        image: 'assets/img/amazonVideoAdsCertificatin.png',
+                        description:
+                            'This certification demonstrates proficiency in Amazon Video Ads. It covers advanced techniques and strategies for optimizing video advertising campaigns on Amazon.',
+                    },
+                    {
+                        name: 'Amazon Sponsored Ads Certification',
+                        image: 'assets/img/spnosoredAds.png',
+                        description:
+                            'This certification showcases expertise in Amazon Sponsored Ads. It includes comprehensive knowledge of creating and managing effective sponsored ad campaigns on the Amazon platform.',
+                    },
+                    {
+                        name: 'Amazon Sponsored Ads Advanced Certification',
+                        image: './assets/img/sponsored_Ads_Advanced_Certification.png',
+                        description:
+                            'This advanced certification proves mastery in Amazon Sponsored Ads. It covers complex strategies and tools for maximizing the performance of sponsored ad campaigns on Amazon.',
+                    },
+                ];
+                const certItems = document.querySelectorAll('.home-certification-item');
+                const modal = document.getElementById('certModal');
+                const modalTitle = document.getElementById('modalTitle');
+                const modalImage = document.getElementById('modalImage');
+                const modalDescription = document.getElementById('modalDescription');
+                const closeBtn = document.getElementsByClassName('close')[0];
+                certItems.forEach((item, index) => {
+                    item.addEventListener('click', () => openModal(certifications[index]));
+                });
+                function openModal(cert) {
+                    modalTitle.textContent = cert.name;
+                    modalImage.src = cert.image;
+                    modalImage.alt = cert.name;
+                    modalDescription.textContent = cert.description;
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                }
+                closeBtn.onclick = function () {
+                    closeModal();
+                };
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        closeModal();
+                    }
+                };
+                function closeModal() {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            </script>
+            <section id="why-jungleclick" class="home-why-section">
+                <div style="width: 91.666%; max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 4rem; padding: 8rem 0;">
+                    <div style="display: flex; flex-direction: column; gap: 2rem;">
+                        <div style="display: flex; flex-direction: column; gap: 4rem;">
+                            <div style="width: 5rem; height: 0.25rem; background-color: #f5a623;"></div>
+                            <h1 style="font-weight: 700; font-size: 3rem; color: black;">
+                                <span>Why JungleClick?</span><br />
+                                <span style="font-size: 3rem;">We take all the risks from you</span>
+                            </h1>
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+                        <div style="display: flex; flex-direction: column; gap: 2.5rem;">
+                            <div style="display: flex; flex-direction: column; gap: 2.5rem;">
+                                <div style="display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 1rem;">
+                                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                                        <img src="./assets/svg/statitics.svg" alt="risks" style="width: 2rem; height: 2rem; filter: invert(1);" />
+                                        <h3 style="font-weight: 700; font-size: 1.5rem; color: #b45309;">
+                                            Minimizing Your Risks
+                                        </h3>
+                                    </div>
+                                    <p style="font-size: 1.125rem; color: black;">
+                                        No flat fees, no surprises. JungleClick offers a 100% guarantee
+                                        for 15 days—if you don't make money, neither do we. Your success is
+                                        our priority.
+                                    </p>
+                                </div>
+                                <div style="display: flex; gap: 0.5rem; align-items: center;">
+                                    <img src="./assets/svg/ligh_1.svg" alt="risks" style="width: 2rem; height: 2rem; filter: invert(1);" />
+                                    <h3 style="font-weight: 700; font-size: 1.5rem; color: #b45309;">
+                                        Problem Solvers
+                                    </h3>
+                                </div>
+                                <p style="font-size: 1.125rem; color: black;">
+                                    Every challenge has a solution. We're committed to finding efficient
+                                    answers to whatever issues arise for both our clients and ourselves.
+                                </p>
+                                <div style="display: flex; gap: 0.5rem; align-items: center;">
+                                    <img src="./assets/svg/data_1.svg" alt="risks" style="width: 2rem; height: 2rem; filter: invert(1);" />
+                                    <h3 style="font-weight: 700; font-size: 1.5rem; color: #b45309;">
+                                        Data-Driven Decisions
+                                    </h3>
+                                </div>
+                                <p style="font-size: 1.125rem; color: black;">
+                                    At JungleClick, intuition takes a back seat. Every decision is
+                                    backed by data and thorough analysis.
+                                </p>
+                                <div style="display: flex; gap: 0.5rem; align-items: center;">
+                                    <img
+                                        src="./assets/svg/experiment_1.svg"
+                                        alt="risks"
+                                        style="width: 2rem; height: 2rem; filter: invert(1);"
+                                    />
+                                    <h3 style="font-weight: 700; font-size: 1.5rem; color: #b45309;">
+                                        Testing Smart, Scaling Big
+                                    </h3>
+                                </div>
+                                <p style="font-size: 1.125rem; color: black;">
+                                    We ooch; that is to say, we start small, testing new ideas in the
+                                    most cost-effective way possible. Once proven, we scale up to drive
+                                    growth.
+                                </p>
+                                <div style="display: flex; gap: 0.5rem; align-items: center;">
+                                    <img src="./assets/svg/Icon.svg" alt="risks" style="width: 2rem; height: 2rem; filter: invert(1);" />
+                                    <h3 style="font-weight: 700; font-size: 1.5rem; color: #b45309;">
+                                        Innovative Solutions
+                                    </h3>
+                                </div>
+                                <p style="font-size: 1.125rem; color: black;">
+                                    Thinking outside the box is our specialty. JungleClick delivers
+                                    fresh, innovative approaches that benefit both your brand and ours.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="process" class="home-white-section">
+                <div class="home-container">
+                    <h2 class="home-section-title">Our Selection Process</h2>
+                    <p style="text-align: center; font-size: 1.125rem; margin-bottom: 3rem;">
+                        Because you delegate the risk to us, we carefully evaluate every client
+                        to ensure mutual success. We cannot work with just any client.
+                    </p>
+                    <div class="home-card-container">
+                        <div class="home-card">
+                            <i class="fas fa-chart-pie home-icon"></i>
+                            <h4>Category Analysis</h4>
+                            <p>
+                                We evaluate your product category to determine market potential and
+                                competition levels.
+                            </p>
+                        </div>
+                        <div class="home-card">
+                            <i class="fas fa-signal home-icon"></i>
+                            <h4>Market Saturation</h4>
+                            <p>
+                                We assess the current market saturation to identify growth
+                                opportunities for your products.
+                            </p>
+                        </div>
+                        <div class="home-card">
+                            <i class="fas fa-trademark home-icon"></i>
+                            <h4>Brand Presence</h4>
+                            <p>
+                                We evaluate your brand's current presence on Amazon and its potential
+                                for growth.
+                            </p>
+                        </div>
+                        <div class="home-card">
+                            <i class="fas fa-dollar-sign home-icon"></i>
+                            <h4>Keyword CPC</h4>
+                            <p>
+                                We analyze the average cost-per-click for your main keywords to
+                                estimate advertising costs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section style="background: linear-gradient(135deg, #1a202c 0%, #234786 100%) ; padding: 5rem 1.25rem;">
+                <div style="width: 91.666%; max-width: 1200px; margin: 0 auto; color: white; padding: 1.25rem 2.5rem; max-width: 1200px;">
+                    <div>
+                        <div style="width: 5rem; height: 0.25rem; background-color: #f5a623;"></div>
+                        <h2 style="font-weight: 700; font-size: 1.875rem; padding-top: 2.5rem; margin-bottom: 1rem;">
+                            Would you like us to help boost your sales with effective Amazon Ads?
+                        </h2>
+                        <p style="margin-top: 2.5rem; font-size: 1.125rem;">
+                            We are confident it will work, as we see it with our clients all the time.
+                            Take the first step by booking a call.
                         </p>
-
-                        <p class="appointment-text-sub">
-                            This program isn't designed for launch-phase brands, unproven products, or anyone looking for quick fixes. 
+                    </div>
+                    <div style="display: flex; justify-content: flex-start; align-items: center; padding-top: 2.5rem;">
+                        <a
+                            target="_blank"
+                            href="https://calendar.app.google/9PVF3Lyapjcjinua7"
+                            style="text-transform: uppercase; padding: 0.75rem 1.25rem; background-color: #f5a623; text-decoration: none; font-size: 1rem; font-weight: 700; color: white; text-align: center; display: inline-block;"
+                        >
+                            I want to grow with you
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer style="background-color: #1a2a3a; color: white">
+            <div class="home-container">
+                <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+                    <div style="width: 100%; margin-bottom: 2rem;">
+                        <a href="#inicio" style="display: inline-block; margin-bottom: 1.5rem;">
+                            <img
+                                src="./assets/img/logo.png"
+                                alt="Turning Passion Into Profits"
+                                style="height: 4rem;"
+                            />
+                        </a>
+                        <p style="font-size: 0.875rem; margin-bottom: 1rem; line-height: 1.5;">
+                            At JungleClick, we focus on results, working exclusively with brands
+                            where we know we can deliver exceptional outcomes.
                         </p>
-
-                        <p class="appointment-text-sub">
-                            Please join from a quiet room so we can focus entirely on your campaigns.
-                        </p>
-
-                        <p class="appointment-text-sub">
-                            I'm excited to review your account, uncover hidden opportunities, and share proven PPC strategies to boost your sales and profitability.
-                        </p>
-
-                        <p class="appointment-signature mt-4">
-                            Andrew Pernia | CEO and Founder
-                            <br>
-                            <i class="fa-solid fa-circle text-primary me-2 appointment-dot"></i> <a href="mailto:start@jungleclickppc.com" class="appointment-email">start@jungleclickppc.com</a>
-                        </p>
+                    </div>
+                    <div style="width: 100%; margin-bottom: 2rem;">
+                        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem;">Enlaces</h3>
+                        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;">
+                            <li>
+                                <a href="#" style="color: white; text-decoration: none;">Inicio</a>
+                            </li>
+                            <li>
+                                <a href="#why-jungleclick" style="color: white; text-decoration: none;">Acerca de nosotros</a>
+                            </li>
+                            <li>
+                                <a href="#process" style="color: white; text-decoration: none;">Servicios</a>
+                            </li>
+                            <li>
+                                <a href="#boost-sales" style="color: white; text-decoration: none;">Casos de éxito</a>
+                            </li>
+                            <li>
+                                <a href="#" style="color: white; text-decoration: none;">Contacto</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="width: 100%; display: flex; flex-direction: column; align-items: flex-end;">
+                        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem;">Aviso Legal</h3>
+                        <ul style="list-style: none; padding: 0; margin: 0; text-align: right; display: flex; flex-direction: column; gap: 1rem;">
+                            <li>
+                                <a href="#" style="color: white; text-decoration: none;">Política de Privacidad</a>
+                            </li>
+                        </ul>
+                        <div style="margin-top: 2.5rem;">
+                            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; text-align: right;">Síguenos</h3>
+                            <div style="display: flex; justify-content: flex-end; gap: 0.5rem;">
+                                <a href="#" target="_blank" style="margin-left: 10px;">
+                                    <img
+                                        src="./assets/svg/instagram.svg"
+                                        alt="Instagram"
+                                        style="height: 2rem; width: 2rem;"
+                                    />
+                                </a>
+                                <a href="#" target="_blank" style="margin-left: 10px;">
+                                    <img src="./assets/svg/facebook.svg" alt="Facebook" style="height: 2rem; width: 2rem;" />
+                                </a>
+                                <a href="#" target="_blank" style="margin-left: 10px;">
+                                    <img src="./assets/svg/linkedin.svg" alt="LinkedIn" style="height: 2rem; width: 2rem;" />
+                                </a>
+                                <a href="#" target="_blank" style="margin-left: 10px;">
+                                    <img src="./assets/svg/tiktok.svg" alt="TikTok" style="height: 2rem; width: 2rem;" />
+                                </a>
+                                <a href="#" target="_blank" style="margin-left: 10px;">
+                                    <img src="./assets/svg/wsp.svg" alt="WhatsApp" style="height: 2rem; width: 2rem;" />
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+            <div style="border-top: 1px solid rgba(255, 255, 255, 0.3);">
+                <div class="home-container">
+                    <p style="text-align: center; font-size: 0.875rem;">
+                        Todos los derechos reservados &copy; JungleClick, 2025
+                    </p>
+                </div>
+            </div>
+        </footer>
     </div>
 
     <!-- RESULTS PAGE -->
@@ -1042,16 +1622,14 @@
                 </p>
 
                 <a 
-  href="https://calendly.com/start-jungleclickppc/30-minute-ppc-audit-with-jungleclick"
-  class="cta-button"
-  target="_blank"
-  rel="noopener noreferrer"
-style="text-decoration: none;">
-    <span class="cta-icon"></span>
-    Book your free PPC Audit
-</a>
-
-
+                    href="https://calendly.com/start-jungleclickppc/30-minute-ppc-audit-with-jungleclick"
+                    class="cta-button"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style="text-decoration: none;">
+                    <span class="cta-icon"></span>
+                    Book your free PPC Audit
+                </a>
 
                 <div class="brands-trust-section">
                     <h3 class="brands-trust-title">A FEW OF THE BRANDS THAT TRUST JUNGLECLICK</h3>
@@ -1076,7 +1654,7 @@ style="text-decoration: none;">
             </div>
         </div>
 
-        <div class="certifications-section">
+        <div class="certification-section">
             <h2>Our team is <span class="highlight">fully certified</span></h2>
             
             <div class="cert-badges">
@@ -1407,7 +1985,7 @@ style="text-decoration: none;">
         </div>
     </div>
 
-    <!-- BIFENTHRIN PAGE - CORREGIDO -->
+    <!-- BIFENTHRIN PAGE -->
     <div id="bifenthrin" class="tab-content-panel">
         <div class="content-container">
             
@@ -1486,6 +2064,21 @@ style="text-decoration: none;">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        const words = ['Beginner', 'Intermediate', 'Advanced'];
+        let currentIndex = 0;
+        function changeWord() {
+            const changingWord = document.querySelector('.changing-word');
+            if (changingWord) {
+                changingWord.classList.remove('active');
+                setTimeout(() => {
+                    changingWord.textContent = words[currentIndex];
+                    changingWord.classList.add('active');
+                    currentIndex = (currentIndex + 1) % words.length;
+                }, 300);
+            }
+        }
+        setInterval(changeWord, 2000);
+
         function switchTab(tabName) {
             // Ocultar todos los paneles de contenido
             const allPanels = document.querySelectorAll('.tab-content-panel');

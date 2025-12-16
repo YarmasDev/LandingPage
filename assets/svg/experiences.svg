@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <g fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Gráfico de barras (Marketing) -->
+    <rect x="8" y="32" width="8" height="24"/>
+    <rect x="24" y="24" width="8" height="32"/>
+    <rect x="40" y="16" width="8" height="40"/>
+    
+    <!-- Matraz (Experimentación) -->
+    <path d="M28 2h8v12l12 24H16L28 14V2z"/>
+    <path d="M16 50h32a6 6 0 0 1 6 6v4H10v-4a6 6 0 0 1 6-6z"/>
+    
+    <!-- Líquido en el matraz -->
+    <path fill="#00f" opacity="0.2" d="M20 38h24v12H20z"/>
+  </g>
+</svg>
