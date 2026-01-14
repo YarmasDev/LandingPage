@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JungleClick - Results</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="layout.css">
+    
+    <style>
+        /* ESTILOS ESPECIFICOS DE RESULTS */
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(90deg, #1a2a3a 0%, #2d4a5e 50%, #3d5a6e 100%);
+            padding: 58px 40px 75px 40px;
+            position: relative;
+        }
+        .hero-container { max-width: 1000px; margin: 0 auto; }
+        .logo-container { margin-bottom: 20px; }
+        .logo-container img { height: 60px; width: auto; }
+        .hero-tagline { font-size: 20px; font-weight: 650; color: white; margin-bottom: 10px; text-transform: uppercase; }
+        .hero-title { font-size: 37px; font-weight: 700; color: white; line-height: 1.2; margin-bottom: 10px; }
+        .hero-title .highlight { color: #ff8c42; }
+        .hero-subtitle { font-size: 20px; color: white; line-height: 1.6; margin-bottom: 30px; max-width: 900px; }
+
+        .cta-button {
+            background: #f17324; color: white; border: none; padding: 20px 50px;
+            font-size: 24px; font-weight: 700; border-radius: 60px; cursor: pointer;
+            display: inline-flex; align-items: center; gap: 15px; transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 140, 66, 0.4); text-decoration: none;
+        }
+        .cta-button:hover { background: #ff7a2e; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 140, 66, 0.5); color: white; }
+        .cta-icon { width: 32px; height: 32px; background: white; border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+        .cta-icon::before { content: ''; display: block; width: 128px; height: 128px; background: url('assets/img/google_meet.png') center/contain no-repeat; position: absolute; }
+
+        /* Brands Section */
+        .brands-trust-section { margin-top: 40px; }
+        .brands-trust-title { font-size: 20px; font-weight: 750; color: white; letter-spacing: 1px; margin-left: 0; margin-bottom: 30px; text-align: center; }
+        .brands-carousel-wrapper { position: relative; display: flex; align-items: center; gap: 20px; justify-content: center; }
+        .brands-container { background: white; border-radius: 40px; padding: 50px 80px; display: flex; justify-content: space-around; align-items: center; gap: 60px; flex: 1; }
+        .brand-logo-1, .brand-logo-2, .brand-logo-3, .brand-logo-4 { width: 200px; height: 100px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .brand-logo-1 img { max-width: 200%; max-height: 200%; object-fit: contain; display: block; }
+        .brand-logo-2 img { max-width: 125%; max-height: 125%; object-fit: contain; display: block; margin-right: 30px; }
+        .brand-logo-3 img { max-width: 120%; max-height: 120%; object-fit: contain; display: block; }
+        .brand-logo-4 img { max-width: 125%; max-height: 125%; object-fit: contain; display: block; }
+
+        /* Certifications Section */
+        .certification-section { background: #1a202c; padding: 30px 40px 80px 40px; text-align: center; color: white; }
+        .certification-section h2 { font-size: 48px; font-weight: 700; margin-bottom: 60px; }
+        .certification-section h2 .highlight { color: #ff8c42; }
+        .cert-badges { display: flex; justify-content: center; gap: 50px; margin-bottom: 35px; flex-wrap: wrap; }
+        .cert-badge { background: white; padding: 15px 10px; border-radius: 16px; width: 220px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer; }
+        .cert-icon { width: 100px; height: 100px; margin: 0 auto 25px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 40px; }
+        .cert-icon.blue { background: #5a9fd4; color: white; }
+        .cert-icon.orange { background: #ff8c42; color: white; }
+        .cert-icon.purple { background: #a78ac9; color: white; }
+        .cert-badge h4 { color: #333; font-size: 15px; font-weight: 600; line-height: 1.5; }
+        .cert-disclaimer { font-size: 22px; margin-bottom: 25px; opacity: 0.95; }
+
+        .results-metrics-title { font-size: 52px; font-weight: 700; margin-bottom: 70px; }
+        .metrics-display { display: flex; justify-content: center; gap: 100px; flex-wrap: wrap; }
+        .metric-display-item { text-align: center; }
+        .metric-circle { width: 180px; height: 180px; border-radius: 50%; background: #ff8c42; border: 7px solid #e67835; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; font-size: 52px; font-weight: 900; color: white; }
+        .metric-display-label { font-size: 19px; font-weight: 600; max-width: 260px; margin: 0 auto; line-height: 1.5; }
+
+        /* Success Stories Section */
+        .content-container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+        .success-stories-section { margin-top: 10px; background-color: #f5f5f0; }
+        .success-stories-section h2 { font-size: 38px; font-weight: 700; text-align: center; margin-bottom: 15px; line-height: 1.3; }
+        .success-stories-section .subtitle { text-align: center; font-size: 20px; margin-bottom: 30px; max-width: 900px; margin-left: auto; margin-right: auto; }
+        .success-stories-section .subtitle strong { font-weight: 700; }
+        .story-cards { display: flex; flex-direction: column; gap: 30px; max-width: 1020px; margin: 0 auto; padding: 0 20px; }
+        
+        .story-card {
+            border: 3px solid #333;
+            border-radius: 60px;
+            padding: 15px 40px 15px 20px; 
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            position: relative;
+            min-height: 160px; 
+        }
+        .story-card:hover { transform: translateY(-4px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+        .story-card-image { width: 120px; height: 120px; flex-shrink: 0; background: none; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+        .story-card-image img { width: 100%; height: 100%; object-fit: contain; }
+        
+        .story-card-text { 
+            flex: 1; 
+            font-size: 22px; 
+            font-weight: 700; 
+            line-height: 1.4; 
+            color: black; 
+            padding-right: 20px; 
+        }
+
+        .read-more-text {
+            position: absolute;
+            bottom: 13px;
+            right: 40px; 
+            font-size: 1rem;
+            color: #f5a623;
+            font-weight: 800;
+            text-transform: uppercase;
+            transition: transform 0.3s ease;
+        }
+        
+        .story-card:hover .read-more-text {
+            transform: translateX(5px);
+        }
+
+        /* Modal Certificaciones */
+        .modal { display: none; position: fixed; z-index: 2100; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); overflow: auto; }
+        .modal-content { background-color: white; margin: 5% auto; padding: 2rem; border-radius: 0.5rem; max-width: 500px; width: 90%; position: relative; top: 50%; transform: translateY(-50%); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); animation: modalAppear 0.3s ease-out; }
+        @keyframes modalAppear { from { opacity: 0; transform: translateY(-60%); } to { opacity: 1; transform: translateY(-50%); } }
+        .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; transition: color 0.2s; }
+        .close:hover, .close:focus { color: #000; text-decoration: none; }
+        
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
+        .animate-float { animation: float 3s ease-in-out infinite; }
+        .animation-delay-200 { animation-delay: 200ms; }
+        .animation-delay-400 { animation-delay: 400ms; }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-title { font-size: 38px; }
+            .hero-subtitle { font-size: 18px; }
+            .cta-button { font-size: 20px; padding: 18px 40px; }
+            .brands-container { flex-wrap: wrap; gap: 30px; }
+            .cert-badges { flex-direction: column; align-items: center; }
+            .metrics-display { flex-direction: column; align-items: center; gap: 50px; }
+            .story-card { 
+                flex-direction: column; 
+                text-align: center; 
+                padding: 30px 30px 50px 30px; 
+            }
+            .story-card-text { font-size: 18px; padding-right: 0; }
+            .read-more-text {
+                position: absolute;
+                bottom: 20px;
+                right: 0; 
+                left: 0; 
+                text-align: center;
+            }
+        }
+        @media (max-width: 768px) {
+            .modal-content { width: 95%; margin: 10% auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav-panel"></div>
+
+    <div class="hero-section">
+        <div class="hero-container">
+            <div class="logo-container">
+                <img src="assets/img/logojungle.png" alt="JungleClick Logo">
+            </div>
+
+            <p class="hero-tagline">FOR BRANDS THAT WON'T SETTLE FOR "GOOD ENOUGH"</p>
+            
+            <h1 class="hero-title">
+                Engineered to Build the next <span class="highlight">Category Leaders</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                We partner with brands ready to outperform their competitors, with systems designed to maximize profits, strengthen ranking, and scale sustainably.
+            </p>
+
+            <a href="https://calendly.com/start-jungleclickppc/30-minute-ppc-audit-with-jungleclick" class="cta-button" target="_blank" rel="noopener noreferrer">
+                <span class="cta-icon"></span>
+                Book your free PPC Audit
+            </a>
+            
+        </div>
+    </div>
+
+    <div class="certification-section">
+        <h2>Our team is <span class="highlight">fully certified</span></h2>
+        
+        <div class="cert-badges">
+            <div class="cert-badge home-certification-item animate-float">
+                <div class="cert-icon blue">
+                    <i class="fa-solid fa-play"></i>
+                </div>
+                <h4>Amazon Video Ads Certification</h4>
+            </div>
+            <div class="cert-badge home-certification-item animate-float animation-delay-200">
+                <div class="cert-icon orange">
+                    <i class="fa-solid fa-ad"></i>
+                </div>
+                <h4>Amazon Sponsored Ads Certification</h4>
+            </div>
+            <div class="cert-badge home-certification-item animate-float animation-delay-400">
+                <div class="cert-icon purple">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h4>Amazon Sponsored Ads Advanced Certification</h4>
+            </div>
+        </div>
+
+        <p class="cert-disclaimer">These certifications don't create results—but they reflect the standards we operate with.</p>
+
+        <h2 class="results-metrics-title">This is a quick look at our results</h2>
+
+        <div class="metrics-display">
+            <div class="metric-display-item">
+                <div class="metric-circle">84%</div>
+                <div class="metric-display-label">Average YoY profit growth (partner average)</div>
+            </div>
+            <div class="metric-display-item">
+                <div class="metric-circle">99%</div>
+                <div class="metric-display-label">Partner Retention Rate</div>
+            </div>
+            <div class="metric-display-item">
+                <div class="metric-circle">$8M</div>
+                <div class="metric-display-label">Revenue influenced / Managed</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="stories" class="success-stories-section">
+        <div class="content-container">
+            <h2>Your Brand Could Be Our Next Success Story</h2>
+            <p class="subtitle">These brands transformed their performance using our systems—and you can explore exactly how. <strong>Click into each story to see the strategies and results behind their growth.</strong></p>
+
+            <div class="story-cards">
+                <a href="lgm-soil.html" class="story-card">
+                    <div class="story-card-image">
+                        <img src="assets/img/lgm soil produc.png" alt="LGM Soil Product">
+                    </div>
+                    <div class="story-card-text">
+                        A New Brand bleeding with High ACoS and No Traction—Then Up 1,166% in Sales in Just 6 Months
+                    </div>
+                    <span class="read-more-text">READ MORE <i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <a href="quick-clean.html" class="story-card">
+                    <div class="story-card-image">
+                        <img src="assets/img/quick and clean produc.png" alt="Quick and Clean Product">
+                    </div>
+                    <div class="story-card-text">
+                        From losing -$100,000 Per Month to Add Six Figures in New Monthly Revenue While Dropping ACoS 36% in Just 3 Months
+                    </div>
+                    <span class="read-more-text">READ MORE <i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <a href="bifenthrin.html" class="story-card">
+                    <div class="story-card-image">
+                        <img src="assets/img/bifent.png" alt="Bifenthrin Product">
+                    </div>
+                    <div class="story-card-text">
+                        A Brand Stuck Spinning Its Wheels: 34.66% ACoS, Weak Returns, No Clear Path—Until +607% Sales and 10.89% ACoS in 6 Months
+                    </div>
+                    <span class="read-more-text">READ MORE <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-panel"></div>
+
+    <div id="certModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="modalTitle"></h3>
+            <img
+                id="modalImage"
+                src=""
+                alt=""
+                style="width: 100%; height: auto; object-fit: contain; margin-bottom: 1rem"
+            />
+            <p id="modalDescription"></p>
+        </div>
+    </div>
+
+    <script src="navbar.js"></script>
+    <script src="footer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // SCRIPT ESPECIFICO DE RESULTS (Lógica del Modal de Certificaciones)
+        const certifications = [
+            {
+                name: 'Amazon Video Ads Certification',
+                image: 'assets/img/amazonVideoAdsCertificatin.png',
+                description: 'This certification demonstrates proficiency in Amazon Video Ads. It covers advanced techniques and strategies for optimizing video advertising campaigns on Amazon.',
+            },
+            {
+                name: 'Amazon Sponsored Ads Certification',
+                image: 'assets/img/spnosoredAds.png',
+                description: 'This certification showcases expertise in Amazon Sponsored Ads. It includes comprehensive knowledge of creating and managing effective sponsored ad campaigns on the Amazon platform.',
+            },
+            {
+                name: 'Amazon Sponsored Ads Advanced Certification',
+                image: './assets/img/sponsored_Ads_Advanced_Certification.png',
+                description: 'This advanced certification proves mastery in Amazon Sponsored Ads. It covers complex strategies and tools for maximizing the performance of sponsored ad campaigns on Amazon.',
+            },
+        ];
+        
+        const certItems = document.querySelectorAll('.home-certification-item');
+        const modal = document.getElementById('certModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalImage = document.getElementById('modalImage');
+        const modalDescription = document.getElementById('modalDescription');
+        const closeBtn = document.getElementsByClassName('close')[0];
+        
+        certItems.forEach((item, index) => {
+            item.addEventListener('click', () => openModal(certifications[index]));
+        });
+        
+        function openModal(cert) {
+            modalTitle.textContent = cert.name;
+            modalImage.src = cert.image;
+            modalImage.alt = cert.name;
+            modalDescription.textContent = cert.description;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        closeBtn.onclick = function () {
+            closeModal();
+        };
+        
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        };
+        
+        function closeModal() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+</html>

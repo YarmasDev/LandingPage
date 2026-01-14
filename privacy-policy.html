@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JungleClick - Privacy Policy</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="layout.css">
+    
+    <style>
+        /* ESTILOS ESPECÍFICOS DE PRIVACY POLICY */
+        body { 
+            background: linear-gradient(90deg, #242c3b 0%, #2e466f 100%);
+            color: #fff; 
+        }
+
+        :root {
+            --jungle-orange: rgb(255, 145, 83);
+            --dark-blue: #1a202c;
+            --light-bg: #f5f5f0;
+        }
+
+        /* CONTENEDOR PRINCIPAL */
+        .policy-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        /* HEADER SECTION */
+        .policy-header h1 {
+            font-size: 3.3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-top: 40px;
+        }
+        .policy-header h1 span {
+            color: var(--jungle-orange);
+        }
+        .policy-intro {
+            font-size: 1.4rem;
+            line-height: 1.6;
+            max-width: 1000px;
+            margin: 0 auto 60px auto;
+            text-align: left;
+        }
+
+        /* SECCIONES DE TEXTO */
+        .policy-section {
+            margin-bottom: 60px;
+            text-align: left;
+            font-size: 1.4rem;
+        }
+        
+        .policy-section h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+        /* TARJETAS DE DATOS */
+        .data-card {
+            background-color: var(--light-bg);
+            color: #333;
+            border-radius: 40px;
+            padding: 25px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .data-card h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark-blue);
+        }
+
+        .data-card p {
+            font-size: 1.35rem;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .data-card strong { font-weight: 700; }
+
+        /* TEXTO SIMPLE */
+        .text-block {
+            font-size: 1.35rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .text-block strong { color: #fff; font-weight: 700; }
+
+        /* CONTACTO FINAL (ESTILO ESPECÍFICO DE ESTA PÁGINA) */
+        .contact-section {
+            margin-top: 80px;
+            text-align: center;
+        }
+        
+        .contact-grid {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        /* Botones específicos de la página de política (diferentes al modal global) */
+        .contact-box {
+            background-color: var(--light-bg);
+            color: var(--dark-blue);
+            padding: 15px 40px;
+            border-radius: 50px;
+            border: 3.5px solid var(--jungle-orange);
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-box:hover {
+            transform: scale(1.05);
+            color: var(--dark-blue);
+        }
+
+        .contact-box i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--dark-blue);
+        }
+
+        .contact-box h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .contact-box p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .policy-header h1 { font-size: 2.5rem; }
+            .policy-section h2 { font-size: 2rem; }
+            .data-card { padding: 20px; }
+            .contact-box { min-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav-panel"></div>
+
+    <div class="policy-container">
+        
+        <div class="policy-header">
+            <h1>Welcome to <span>JungleClick</span></h1>
+            <div class="policy-intro">
+                <p>Here we are committed to protecting the privacy and security of your data. This privacy policy describes how we collect, use, store, and share our users’ information when you use our services. By authorizing our application, you agree to the practices described in this policy.</p>
+            </div>
+        </div>
+
+        <div class="policy-section">
+            <h2>Data We Collect</h2>
+            <p class="text-left mb-5" style="max-width: 1000px; margin: 0 auto;">To provide our <strong>consolidated analysis services of your Amazon performance</strong>, we collect and process the following types of data:</p>
+
+            <div class="data-card">
+                <h3>Amazon Ads Account</h3>
+                <p><strong>Advertising Performance Metrics:</strong> PPC spend, PPC sales, ads clicks, impressions, and PPC purchases.</p>
+                <p><strong>Source:</strong> This information is obtained directly from the Amazon Ads API.</p>
+            </div>
+
+            <div class="data-card">
+                <h3>Data from Your Amazon Seller/Vendor Account (SP-API)</h3>
+                <p><strong>Product Sales and Traffic Metrics:</strong> total sales, units, sessions, click count, impression count, add to cart count, purchase count, search traffics sales, ordered product sales, buy box percentage, browser session, browser views, mobile sessions, and mobile views.</p>
+                <p><strong>Source:</strong> This information is obtained directly from the Selling Partner API (SP-API).</p>
+            </div>
+        </div>
+
+        <div class="policy-section">
+            <h2>How We Use Your Data</h2>
+            <p class="mb-4">We use the collected data exclusively for the following purposes:</p>
+            
+            <p class="text-block"><strong>Service Provision and Improvement:</strong> To operate, maintain, protect, and improve our platform and the services we offer.</p>
+            
+            <p class="text-block"><strong>Consolidated Client Analysis:</strong> To combine data from your AmazonAds account and your Amazon Seller/Vendor account, allowing us to provide you with comprehensive analysis and a unified view of your product and campaign performance.</p>
+            
+            <p class="text-block"><strong>Custom Reports and Dashboards:</strong> To generate reports, dashboards, and visualizations that help you better understand your business metrics.</p>
+            
+            <p class="text-block"><strong>Optimization and Recommendations:</strong> To identify trends, opportunities, and offer personalized recommendations that can help you optimize your sales and advertising strategies.</p>
+            
+            <p class="text-block"><strong>Communication:</strong> To send you important notifications about the service, updates, alerts, and to respond to your inquiries.</p>
+            
+            <p class="text-block"><strong>Internal Purposes:</strong> For internal audits, troubleshooting, and the development of new features.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>How We Share Your Data</h2>
+            <p class="text-block"><strong>Your privacy is our priority.</strong> We do not share your personal data or your business data collected from Amazon with third parties for marketing or advertising purposes without your explicit consent.</p>
+            
+            <p class="mb-4">We may share your data in the following limited circumstances:</p>
+
+            <p class="text-block"><strong>Service Providers:</strong> With third parties who provide essential services for the operation of our platform (e.g., cloud hosting services, data analytics tools). These providers are contractually obligated to protect your data and may only use it for the specific purposes we have entrusted to them.</p>
+
+            <p class="text-block"><strong>Legal Compliance:</strong> If required by law, a court order, or a valid request from a governmental authority.</p>
+
+            <p class="text-block"><strong>Business Transfers:</strong> In the event of a merger, acquisition, sale of assets, or business reorganization, your data may be transferred to the new entity as part of the assets.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>Data Security</h2>
+            <p class="text-block">We implement a robust set of technical, administrative, and physical security measures designed to <strong>protect your data against unauthorized access, disclosure, alteration, or destruction.</strong> You can find more details in our Data Security Policy.</p>
+
+            <h2 class="mt-5">Data Retention</h2>
+            <p class="text-block">We retain your data for as long as necessary to <strong>provide the service and comply with our legal and regulatory obligations.</strong> Once your data is no longer needed for these purposes, it will be securely deleted from our systems.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>Your Rights</h2>
+            <p class="text-block">You have rights regarding your data, including the right to access, rectify, update, or request the deletion of your personal information. To exercise these rights or for any privacy-related inquiries, please contact us at <strong>growth@jungleclickppc.com</strong></p>
+
+            <h2 class="mt-5">Changes to this Privacy Policy</h2>
+            <p class="text-block"><strong>We may update our Privacy Policy periodically</strong> to reflect changes in our practices or applicable law. We will notify you of any substantial changes by posting the new policy on this page and/or through other communication channels.</p>
+        </div>
+
+        <div class="policy-section contact-section">
+            <h2 style="margin-bottom: 20px;">Still have questions?</h2>
+            <p style="text-align: left;">If you have any questions or concerns about this <strong>Privacy Policy or our data practices</strong>, please do not hesitate to contact us:</p>
+
+            <div class="contact-grid">
+                <a href="https://wa.me/15642262549" target="_blank" class="contact-box">
+                    <i class="fas fa-phone-alt"></i>
+                    <h4>Phone</h4>
+                    <p>+1 564-226-2549</p>
+                </a>
+                
+                <a href="mailto:growth@jungleclickppc.com" class="contact-box">
+                    <i class="fas fa-envelope"></i>
+                    <h4>Email</h4>
+                    <p>growth@jungleclickppc.com</p>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-panel"></div>
+
+    <script src="navbar.js"></script>
+    <script src="footer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

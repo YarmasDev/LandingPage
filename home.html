@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JungleClick - Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="layout.css">
+    
+    <style>
+        /* ESTILOS ESPECÍFICOS DE HOME (Header, Hero, Carrusel de Marcas, Secciones) */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        :root {
+            --primary-color: #fdfdfd;
+            --secondary-color: #f5a623;
+            --bg-color: #1a202c;
+            --text-color: #fffafa;
+            --button-color: #f5a623;
+            --jungle-orange: #ff8c00;
+        }
+
+        .home-header {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a202c 0%, #234786 100%);
+            padding-top: 4rem;
+        }
+
+        .home-container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 2rem 0; }
+        
+        .home-header-content { display: flex; flex-direction: column; align-items: flex-start; }
+        .home-logo-container { display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem; animation: fadeInLeft 1s ease-out; }
+        .home-logo { width: 120px; height: auto; }
+        .home-company-name { font-size: 2rem; font-weight: 700; color: var(--jungle-orange); margin-bottom: 0.5rem; }
+        .home-tagline { font-size: 0.8rem; font-style: italic; color: var(--secondary-color); }
+        .home-h1 { font-size: 2.5rem; font-weight: 700; line-height: 1.2; margin-top: 0.5rem; animation: fadeInUp 1s ease-out; text-align: left; color: white; }
+        .home-highlight { color: var(--jungle-orange); white-space: nowrap; }
+        .home-description { font-size: 1rem; max-width: 600px; margin-bottom: 1.5rem; animation: fadeIn 1s ease-out 1s both; text-align: left; color: white; }
+
+        .home-cta-button { display: inline-block; padding: 0.8rem 1.5rem; background-color: var(--button-color); color: white; text-decoration: none; border-radius: 5px; font-weight: 600; transition: all 0.3s ease; text-transform: uppercase; animation: fadeIn 1s ease-out 1.5s both; font-size: 0.9rem; }
+        .home-cta-button:hover { background-color: #ff6b00; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); color: white; }
+
+        .home-image-container { position: relative; width: 100%; padding-bottom: 60%; background-color: rgba(255, 255, 255, 0.1); border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); transition: all 0.3s ease; animation: fadeInRight 1s ease-out; margin-top: 2rem; }
+        .home-image-container:hover { transform: scale(1.02); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4); }
+        .home-image-container img { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100%; height: 100%; object-fit: cover; object-position: center top; border-radius: 15px; }
+
+        .home-dynamic-text-container { position: relative; height: 40px; overflow: hidden; margin-bottom: 1rem; animation: fadeIn 1s ease-out 0.75s both; }
+        #dynamicText { font-size: 1.2rem; font-weight: 600; color: #ff6600; position: absolute; width: 100%; height: 100%; margin: 0; line-height: 40px; text-align: left; opacity: 1; transition: all 0.5s ease-in-out; }
+        .changing-word { display: inline-block; position: relative; transition: all 0.5s ease-in-out; color: #f7f7f7; font-weight: 800; text-shadow: 0 0 5px rgba(255, 102, 0, 0.5); }
+        .changing-word.active { animation: rotateWord 0.5s ease-in-out; }
+
+        @keyframes rotateWord { 0% { transform: rotateX(0deg); opacity: 1; } 50% { transform: rotateX(90deg); opacity: 0; } 100% { transform: rotateX(0deg); opacity: 1; } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+        @keyframes fadeInLeft { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes fadeInRight { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        .home-why-section { color: black; background-color: white; }
+        .home-why-section h1, .home-why-section h3, .home-why-section p { color: black; }
+        .home-section-title { font-size: 2.5rem; font-weight: 700; color: var(--jungle-orange); margin-bottom: 2rem; text-align: center; position: relative; padding-bottom: 15px; }
+        .home-section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background-color: var(--jungle-orange); }
+        
+        .home-white-section, .home-blue-section { background: linear-gradient(135deg, #0a2647, #144272, #205295); color: var(--text-color); padding: 4rem 0; }
+        .home-white-section .home-section-title, .home-blue-section .home-section-title { color: var(--primary-color); }
+
+        .home-card-container { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; }
+        .home-card { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 12px; padding: 2rem; transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); width: calc(50% - 1rem); display: flex; flex-direction: column; align-items: flex-start; text-align: left; overflow: hidden; position: relative; border: 1px solid rgba(255, 255, 255, 0.2); }
+        .home-card::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient( circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70% ); transform: rotate(30deg); transition: all 0.5s ease; opacity: 0; }
+        .home-card:hover { transform: translateY(-5px); box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); }
+        .home-card:hover::before { opacity: 1; }
+        .home-icon { font-size: 2.5rem; color: var(--jungle-orange); margin-bottom: 1rem; transition: all 0.3s ease; }
+        .home-card:hover .home-icon { transform: scale(1.1); }
+        .home-card h4 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--primary-color); }
+        .home-card p { font-size: 0.9rem; color: var(--text-color); line-height: 1.6; }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .home-card { width: 100%; }
+            .home-header-content { flex-direction: column; align-items: flex-start; justify-content: space-between; }
+            .home-text-content { flex: 1; padding-right: 2rem; }
+            .home-image-container { flex: 1; margin-top: 0; }
+        }
+        @media (max-width: 768px) {
+            .home-logo { width: 100px; }
+            .home-h1 { font-size: 2rem; }
+            #dynamicText { font-size: 1rem; }
+            .home-description { font-size: 0.9rem; }
+            .home-cta-button { font-size: 0.8rem; padding: 0.7rem 1.2rem; display: block; text-align: center; margin: 0 auto; }
+            .home-image-container { padding-bottom: 100%; margin-top: 2rem; }
+            .home-image-container img { object-position: center 20%; }
+            .home-text-content { flex: 1; }
+        }
+        @media (min-width: 768px) {
+            .home-header-content { flex-direction: row; align-items: flex-start; justify-content: space-between; }
+            .home-text-content { flex: 1; padding-right: 2rem; }
+            .home-image-container { flex: 1; margin-top: 0; }
+        }
+        @media (min-width: 1024px) {
+            .home-description { font-size: 1.2rem; }
+        }
+
+        /* --- ESTILOS DEL CARRUSEL DE MARCAS --- */
+        .brands-trust-section { margin-top: 40px; width: 100%; padding-bottom: 2rem; }
+        .brands-trust-title { font-size: 20px; font-weight: 750; color: white; letter-spacing: 1px; margin-left: 0; margin-bottom: 30px; text-align: center; }
+        
+        .brands-carousel-wrapper {
+            display: flex; align-items: center; justify-content: center; gap: 20px;
+            max-width: 1000px; margin: 0 auto;
+        }
+
+        .carousel-arrow {
+            background: rgba(255, 255, 255, 0.1); border: 2px solid white; color: white;
+            width: 50px; height: 50px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; font-size: 20px; transition: all 0.3s ease; flex-shrink: 0;
+        }
+        .carousel-arrow:hover { background: #f5a623; border-color: #f5a623; transform: scale(1.1); }
+
+        .brands-container {
+            background: white; border-radius: 40px; padding: 20px 0;
+            width: 100%; overflow: hidden; position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .brands-track { display: flex; width: 100%; }
+
+        .brand-slide {
+            min-width: 50%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .brand-logo-1, .brand-logo-2, .brand-logo-3, .brand-logo-4 { width: 200px; height: 100px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .brand-logo-1 img { max-width: 200%; max-height: 200%; object-fit: contain; display: block; }
+        .brand-logo-2 img { max-width: 125%; max-height: 125%; object-fit: contain; display: block; margin-right: 30px; }
+        .brand-logo-3 img { max-width: 120%; max-height: 120%; object-fit: contain; display: block; }
+        .brand-logo-4 img { max-width: 125%; max-height: 125%; object-fit: contain; display: block; }
+
+        @media (max-width: 768px) {
+            .brand-slide { min-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav-panel"></div>
+
+    <header class="home-header">
+        <div class="home-container">
+            <div class="home-header-content">
+                <div class="home-text-content">
+                    <div class="home-logo-container" id="logoContainer">
+                        <img src="assets/img/logo.png" alt="JungleClick Logo" class="home-logo" />
+                        <p class="home-tagline">Turning Passion Into Profits</p>
+                    </div>
+                    <h1 class="home-h1">Welcome to <span class="home-highlight">JungleClick</span></h1>
+                    <h2 style="color: var(--text-color); font-size: 1.3rem; margin-bottom: 0.5rem; text-align: left;">
+                        Data-Driven Amazon Ads Marketing Agency
+                    </h2>
+                    <div class="home-dynamic-text-container">
+                        <p id="dynamicText">
+                            For <span class="changing-word">Ambitious</span> Amazon Sellers like you
+                        </p>
+                    </div>
+                    <p class="home-description">
+                        At JungleClick, we focus on results, working exclusively with brands where
+                        we know we can deliver exceptional outcomes. We don't just sell
+                        products—we build successful brands through data-backed strategies that
+                        help you dominate the marketplace.
+                    </p>
+                    <a href="#process" class="home-cta-button">
+                        <i class="fas fa-chart-line"></i> Discover Our Process
+                    </a>
+                </div>
+                <div class="home-image-container">
+                    <img src="assets/img/photo_cut.png" alt="JungleClick Team Member" />
+                </div>
+            </div>
+
+            <div class="brands-trust-section">
+                <h3 class="brands-trust-title">A FEW OF THE BRANDS THAT TRUST JUNGLECLICK</h3>
+                
+                <div class="brands-carousel-wrapper">
+                    <button class="carousel-arrow left-arrow" onclick="prevSlide()">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="brands-container">
+                        <div class="brands-track" id="brandsTrack">
+                            <div class="brand-slide"><div class="brand-logo-1"><img src="assets/img/lgm soil.png" alt="LGM Soil"></div></div>
+                            <div class="brand-slide"><div class="brand-logo-2"><img src="assets/img/bughut.png" alt="Bug Hut"></div></div>
+                            <div class="brand-slide"><div class="brand-logo-3"><img src="assets/img/ultimatum.png" alt="Ultimatum"></div></div>
+                            <div class="brand-slide"><div class="brand-logo-4"><img src="assets/img/better.png" alt="Better"></div></div>
+                        </div>
+                    </div>
+                    <button class="carousel-arrow right-arrow" onclick="nextSlide()">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+        <section id="why-jungleclick" class="home-why-section">
+            <div style="width: 91.666%; max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 4rem; padding: 6rem 0;">
+                <div style="display: flex; flex-direction: column; gap: 2rem;">
+                    <div style="display: flex; flex-direction: column; gap: 2rem;">
+                        <div style="width: 5rem; height: 0.25rem; background-color: #f5a623;"></div>
+                        <h1 style="font-weight: 700; font-size: 3rem; color: black;">
+                            <span>Why JungleClick?</span><br />
+                            <span style="font-size: 3rem;">We take all the risks from you</span>
+                        </h1>
+                    </div>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+                    <div style="display: flex; flex-direction: column; gap: 2.5rem;">
+                        <div style="display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 1rem;">
+                             <div style="display: flex; gap: 0.5rem; align-items: center;">
+                                <img src="./assets/svg/statitics.svg" alt="risks" style="width: 5rem; height: 5rem; filter: invert(1);" />
+                                <h3 style="font-weight: 700; font-size: 1.5rem; color: #b45309;">Minimizing Your Risks</h3>
+                            </div>
+                            <p style="font-size: 1.125rem; color: black;">
+                                No flat fees, no surprises. JungleClick offers a 100% guarantee
+                                for 15 days—if you don't make money, neither do we. Your success is
+                                our priority.
+                            </p>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem; align-items: center;">
+                            <img src="./assets/svg/ligh_1.svg" alt="risks" style="width: 5rem; height: 5rem; filter: invert(1);" />
+                            <h3 style="font-weight: 700; font-size: 1.5rem; color: #b45309;">Problem Solvers</h3>
+                        </div>
+                        <p style="font-size: 1.125rem; color: black;">Every challenge has a solution. We're committed to finding efficient
+                            answers to whatever issues arise for both our clients and ourselves.</p>
+
+                        <div style="display: flex; gap: 0.5rem; align-items: center;">
+                            <img src="./assets/svg/data_1.svg" alt="risks" style="width: 5rem; height: 5rem; filter: invert(1);" />
+                            <h3 style="font-weight: 700; font-size: 1.5rem; color: #b45309;">Data-Driven Decisions</h3>
+                        </div>
+                        <p style="font-size: 1.125rem; color: black;">At JungleClick, intuition takes a back seat. Every decision is
+                            backed by data and thorough analysis.</p>
+
+                        <div style="display: flex; gap: 0.5rem; align-items: center;">
+                            <img src="./assets/svg/experiment_1.svg" alt="risks" style="width: 5rem; height: 5rem; filter: invert(1);" />
+                            <h3 style="font-weight: 700; font-size: 1.5rem; color: #b45309;">Testing Smart, Scaling Big</h3>
+                        </div>
+                        <p style="font-size: 1.125rem; color: black;">We ooch; that is to say, we start small, testing new ideas in the
+                            most cost-effective way possible. Once proven, we scale up to drive
+                            growth.</p>
+
+                        <div style="display: flex; gap: 0.5rem; align-items: center;">
+                            <img src="./assets/svg/Icon.svg" alt="risks" style="width: 5rem; height: 5rem; filter: invert(1);" />
+                            <h3 style="font-weight: 700; font-size: 1.5rem; color: #b45309;">Innovative Solutions</h3>
+                        </div>
+                        <p style="font-size: 1.125rem; color: black;">Thinking outside the box is our specialty. JungleClick delivers
+                            fresh, innovative approaches that benefit both your brand and ours.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="process" class="home-white-section">
+            <div class="home-container">
+                <h2 class="home-section-title">Our Selection Process</h2>
+                <p style="text-align: center; font-size: 1.125rem; margin-bottom: 3rem;">
+                    Because you delegate the risk to us, we carefully evaluate every client
+                    to ensure mutual success. We cannot work with just any client.
+                </p>
+                <div class="home-card-container">
+                    <div class="home-card">
+                        <i class="fas fa-chart-pie home-icon"></i>
+                        <h4>Category Analysis</h4>
+                        <p>We evaluate your product category to determine market potential and competition levels.</p>
+                    </div>
+                    <div class="home-card">
+                        <i class="fas fa-signal home-icon"></i>
+                        <h4>Market Saturation</h4>
+                        <p>We assess the current market saturation to identify growth opportunities for your products.</p>
+                    </div>
+                    <div class="home-card">
+                        <i class="fas fa-trademark home-icon"></i>
+                        <h4>Brand Presence</h4>
+                        <p>We evaluate your brand's current presence on Amazon and its potential for growth.</p>
+                    </div>
+                    <div class="home-card">
+                        <i class="fas fa-dollar-sign home-icon"></i>
+                        <h4>Keyword CPC</h4>
+                        <p>We analyze the average cost-per-click for your main keywords to estimate advertising costs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="background: linear-gradient(135deg, #1a202c 0%, #234786 100%) ; padding: 5rem 1.25rem;">
+            <div style="width: 91.666%; max-width: 1200px; margin: 0 auto; color: white; padding: 1.25rem 2.5rem; max-width: 1200px;">
+                <div>
+                    <div style="width: 5rem; height: 0.25rem; background-color: #f5a623;"></div>
+                    <h2 style="font-weight: 700; font-size: 1.875rem; padding-top: 2.5rem; margin-bottom: 1rem;">
+                        Would you like us to help boost your sales with effective Amazon Ads?
+                    </h2>
+                    <p style="margin-top: 2.5rem; font-size: 1.125rem;">
+                        We are confident it will work, as we see it with our clients all the time.
+                        Take the first step by booking a call.
+                    </p>
+                </div>
+                <div style="display: flex; justify-content: flex-start; align-items: center; padding-top: 2.5rem;">
+                    <a target="_blank" href="https://calendar.app.google/9PVF3Lyapjcjinua7" style="text-transform: uppercase; padding: 0.75rem 1.25rem; background-color: #f5a623; text-decoration: none; font-size: 1rem; font-weight: 700; color: white; text-align: center; display: inline-block;">
+                        I want to grow with you
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="footer-panel"></div>
+
+    <script src="navbar.js"></script>
+    <script src="footer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // SCRIPT 1: Animación de texto
+        const words = ['Beginner', 'Intermediate', 'Advanced'];
+        let currentIndex = 0;
+        function changeWord() {
+            const changingWord = document.querySelector('.changing-word');
+            if (changingWord) {
+                changingWord.classList.remove('active');
+                setTimeout(() => {
+                    changingWord.textContent = words[currentIndex];
+                    changingWord.classList.add('active');
+                    currentIndex = (currentIndex + 1) % words.length;
+                }, 300);
+            }
+        }
+        setInterval(changeWord, 2000);
+
+        // SCRIPT 2: CARRUSEL INFINITO
+        const track = document.getElementById('brandsTrack');
+        let isAnimating = false; 
+
+        function nextSlide() {
+            if (isAnimating) return;
+            isAnimating = true;
+            const slideWidth = window.innerWidth <= 768 ? 100 : 50;
+            track.style.transition = 'transform 0.5s ease-in-out';
+            track.style.transform = `translateX(-${slideWidth}%)`;
+            setTimeout(() => {
+                track.appendChild(track.firstElementChild);
+                track.style.transition = 'none';
+                track.style.transform = 'translateX(0)';
+                isAnimating = false;
+            }, 500);
+        }
+
+        function prevSlide() {
+            if (isAnimating) return;
+            isAnimating = true;
+            const slideWidth = window.innerWidth <= 768 ? 100 : 50;
+            track.style.transition = 'none';
+            track.insertBefore(track.lastElementChild, track.firstElementChild);
+            track.style.transform = `translateX(-${slideWidth}%)`;
+            setTimeout(() => {
+                track.style.transition = 'transform 0.5s ease-in-out';
+                track.style.transform = 'translateX(0)';
+                setTimeout(() => { isAnimating = false; }, 500);
+            }, 10);
+        }
+    </script>
+</body>
+</html>

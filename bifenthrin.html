@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JungleClick - Bifenthrin</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="layout.css">
+    
+    <style>
+        /* ESTILOS ESPECIFICOS */
+        
+        .content-container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 60px 20px; 
+            position: relative; /* Para posicionar el botón de retorno */
+        }
+        
+        .chart { 
+            width: 100%; 
+            height: 300px; 
+            background: none; 
+            border-radius: 8px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            position: relative; 
+            overflow: hidden; 
+            margin-bottom: 40px; 
+        }
+        .chart img { width: 100%; height: 100%; object-fit: contain; }
+
+        .large-headline { font-size: 36px; font-weight: 700; text-align: center; margin: 100px 0 80px 0; line-height: 1.3; }
+
+        .two-column-section { display: grid; grid-template-columns: 300px 1fr; gap: 60px; margin: 80px 0; align-items: start; }
+        .section-label { font-size: 42px; font-weight: 300; color: #999; position: sticky; top: 120px; }
+        .section-content { font-size: 18px; line-height: 1.8; }
+        .section-content p { margin-bottom: 25px; }
+        .section-content ul { list-style: none; padding: 0; margin: 20px 0; }
+        .section-content ul li { margin-bottom: 20px; padding-left: 0; }
+        .section-content ul li strong { font-weight: 700; }
+        
+        /* Estilo profesional para el enlace de retorno */
+        .return-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 1.2rem;
+            color: #333;
+            font-weight: 800; /* Bold fuerte */
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            z-index: 10;
+            cursor: pointer;
+        }
+        
+        .return-link i {
+            transition: transform 0.3s ease;
+        }
+
+        .return-link:hover {
+            color: #f5a623; /* Jungle orange */
+            transform: translateX(-5px); /* Animación hacia la izquierda */
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .two-column-section { grid-template-columns: 1fr; gap: 40px; }
+            .section-label { position: static; font-size: 32px; }
+            .return-link { top: 10px; left: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav-panel"></div>
+
+    <div class="content-container">
+        
+        <a href="results.html#stories" class="return-link">
+            <i class="fas fa-arrow-left"></i> RETURN
+        </a>
+
+        <div class="chart">
+            <img src="assets/img/grafico bifenthrin.png" alt="Bifenthrin Performance Chart">
+        </div>
+
+        <div class="large-headline" style="max-width: 1200px; margin: 0 auto 80px auto;">
+            A Brand Stuck Spinning Its Wheels: 34.66% ACoS, Weak Returns, No Clear Path—Until +607% Sales and 10.89% ACoS in 6 Months
+        </div>
+
+        <div class="two-column-section" style="max-width: 1100px; margin-left: auto; margin-right: auto;">
+            <div class="section-label">The Brand</div>
+            <div class="section-content" style="max-width: 650px;">
+                <p>Bifenthreen is a small but specialized pest-control brand offering <strong>Bifenthrin Plus-C</strong>, a professional-grade yet family-safe liquid insecticide designed for both indoor and outdoor use.</p>
+                <p>Despite having a strong value proposition, the brand entered one of Amazon's most competitive categories—dominated by established players with extensive review depth and aggressive Sponsored Products strategies. The account was active but underperforming, with inconsistent visibility and inefficient campaign structure.</p>
+            </div>
+        </div>
+
+        <div class="two-column-section" style="max-width: 1100px; margin-left: auto; margin-right: auto;">
+            <div class="section-label">The Problem</div>
+            <div class="section-content" style="max-width: 650px;">
+                <p>Before optimization, the Amazon account struggled with:</p>
+                <ul>
+                    <li><strong>34.66% ACoS</strong>, too high for the category</li>
+                    <li>Weak <strong>keyword relevancy</strong> and inflated <strong>CPCs</strong></li>
+                    <li>No strategic <strong>keyword architecture</strong> or segmentation</li>
+                    <li><strong>Underperforming campaigns</strong> unable to identify converting signals</li>
+                    <li><strong>Low conversion rates</strong> due to irrelevant search terms</li>
+                </ul>
+                <p>Without a data-driven structure, any attempt to scale would only increase spend without improving conversions, ranking, or profitability.</p>
+            </div>
+        </div>
+
+        <div class="two-column-section" style="max-width: 1100px; margin-left: auto; margin-right: auto;">
+            <div class="section-label">The Solution</div>
+            <div class="section-content" style="max-width: 650px;">
+                <p>We executed a complete PPC rebuild focused on rapid data collection and precise optimization:</p>
+                <ul>
+                    <li><strong>Launched 85+ campaigns</strong> to quickly gather conversion data across keywords, ASINs, and audiences.</li>
+                    <li><strong>Adjusted bids strategically</strong> to strengthen performance on proven high-intent targets.</li>
+                    <li><strong>Applied daily negative keywords</strong> to remove irrelevant traffic and protect spend.</li>
+                    <li><strong>Pruned inefficient campaigns</strong>, consolidating budget toward profitable segments.</li>
+                    <li><strong>Used N-gram and ASIN-level analysis</strong> to uncover the specific terms and competitors that consistently converted.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="two-column-section" style="max-width: 1100px; margin-left: auto; margin-right: auto;">
+            <div class="section-label">The Results</div>
+            <div class="section-content" style="max-width: 650px;">
+                <p>In six months, Bifenthreen achieved a complete turnaround:</p>
+                <ul>
+                    <li><strong>+607% increase in monthly sales</strong> (from $10,152 to $71,787)</li>
+                    <li>ACoS reduced from <strong>34.66% to 10.89%</strong></li>
+                    <li>CPC lowered by <strong>64%</strong> (from $1.48 to $0.54)</li>
+                    <li>Higher conversion rates thanks to cleaner traffic and targeted bidding</li>
+                    <li>Stronger organic ranking across core pest-control terms</li>
+                    <li>A fully profitable, scalable PPC structure ready for continued growth</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="max-width: 900px; margin: 80px auto; text-align: center;">
+            <p style="font-size: 26px; line-height: 1.6; margin-bottom: 30px;">
+                Bifenthreen's results show how a data-driven, relevance-focused PPC strategy can turn a weak account into a profitable, scalable engine.
+            </p>
+            <p style="font-size: 26px; line-height: 1.6; font-weight: 600;">
+                Ready to scale your Amazon performance? Partner with us and transform your brand's growth trajectory.
+            </p>
+        </div>
+    </div>
+
+    <div class="footer-panel"></div>
+
+    <script src="navbar.js"></script>
+    <script src="footer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
