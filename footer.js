@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <div class="home-container" style="padding: 2rem 0; width: 90%; max-width: 1200px; margin: 0 auto;">
             
             <div style="margin-bottom: 3rem;">
-                <a href="home.html" style="display: inline-block; margin-bottom: 1rem;">
+                <a href="index.html" style="display: inline-block; margin-bottom: 1rem;">
                     <img src="./assets/img/logo.png" alt="Turning Passion Into Profits" style="height: 4rem;" />
                 </a>
                 <p style="font-size: 0.875rem; line-height: 1.5; max-width: 500px;">
@@ -19,10 +19,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 <div class="footer-col-left">
                     <h3 class="footer-heading">Links</h3>
                     <ul class="footer-list">
-                        <li><a href="home.html" class="footer-link">Home</a></li>
+                        <li><a href="index.html" class="footer-link">Home</a></li>
                         <li><a href="#" class="footer-link contact-trigger">Contact</a></li>
-                        <li><a href="home.html#why-jungleclick" class="footer-link">About Us</a></li>
-                        <li><a href="home.html#process" class="footer-link">Services</a></li>
+                        <li><a href="index.html#why-jungleclick" class="footer-link">About Us</a></li>
+                        <li><a href="index.html#process" class="footer-link">Services</a></li>
                         <li><a href="results.html" class="footer-link">Success Stories</a></li>
                     </ul>
                 </div>
